@@ -11,11 +11,12 @@ const inter = Inter({
  });
 
  const mono = Monoton({
+  weight: '400',
   subsets: ['latin'],
-  display: 'swap', 
+  display: 'swap',
   variable: '--font-mono',
-  weight:'400',
- });
+ })
+
 
 export const metadata = {
   title: "OctoGroove Spotify",
@@ -24,7 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable}, ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen">
         <NavBar />
         <main>
