@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         Inter: ['var(--font-inter)'],
+        Monoton: ['var(--font-mono)'],
       }
     },
   },

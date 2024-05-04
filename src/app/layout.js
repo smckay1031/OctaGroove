@@ -1,11 +1,20 @@
 import { Inter } from "next/font/google";
+import { Monoton } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "./components/nav";
+
 
 const inter = Inter({ 
   subsets: ["latin"], 
   display: 'swap', 
   variable: '--font-inter',
+ });
+
+ const mono = Monoton({
+  subsets: ['latin'],
+  display: 'swap', 
+  variable: '--font-mono',
+  weight:'400',
  });
 
 export const metadata = {
@@ -15,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}, ${mono.variable}`}>
       <body className="min-h-screen">
         <NavBar />
         <main>
