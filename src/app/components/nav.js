@@ -1,4 +1,5 @@
 import React from "react";
+import { LoginButton } from "./sign-in";
 
 
 
@@ -17,7 +18,7 @@ export function NavBar() {
                         <li> About</li>
                     </ul>
                 </nav>
-                <button className="py-3 px-5 bg-green-500 rounded-2xl text-md font-Inter">Sign In </button>
+                <LoginButton className="py-3 px-5 bg-green-500 rounded-2xl text-md font-Inter" />
             </div>
         </header>
     )

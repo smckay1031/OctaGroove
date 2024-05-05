@@ -1,4 +1,5 @@
-import { signIn } from "@/auth.ts"
+//Button component to trigger Spotify user login
+import { signIn } from "../api/auth/[...nextauth]/auth"
  
 export function LoginButton() {
   return (
