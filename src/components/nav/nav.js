@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginButton } from "./sign-in";
+import { LoginButton } from "../ui/sign-in";
 
 
 
@@ -18,7 +18,6 @@ export function NavBar() {
                         <li> About</li>
                     </ul>
                 </nav>
-                <LoginButton className="py-3 px-5 bg-green-500 rounded-2xl text-md font-Inter" />
             </div>
         </header>
     )
