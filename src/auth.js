@@ -24,8 +24,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 console.log("TOKEN STILL VALID");
                 return token;
             }
+            //Create a Fetch Refrsh Token function 
         }
 
-        }
     }
 });
