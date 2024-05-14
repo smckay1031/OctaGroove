@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
 
-
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
         Spotify({
@@ -23,7 +22,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }  
             if (Date.now() < token.accessTokenExpires){
                 console.log("TOKEN STILL VALID");
-                console.log(token);
                 return token;
 
             } else {
@@ -31,7 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
  
                     // If the access token has expired, try to refresh it
                     try {
-                      const response = await fetch("", {
+                      const response = await fetch("https://accounts.spotify.com/api/token", {
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
                         body: new URLSearchParams({
                           client_id: process.env.AUTH_SPOTIFY.ID!,
@@ -43,7 +41,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                       })
              
                       const tokens = await response.json()
-                      console.log(tokens);
              
                       if (!response.ok) throw tokens
              
