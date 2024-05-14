@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 
 
 export function NavBar() {
@@ -12,9 +12,15 @@ export function NavBar() {
                 </div>
                <nav> 
                     <ul className="inline-flex gap-3 justify-center items-center cursor-pointer">
-                        <li> Home</li>
-                        <li> Dashboard</li>
-                        <li> About</li>
+                        <li className="hover:font-semibold">
+                            <Link href={'/'}>Home</Link>
+                        </li>
+                        <li className="hover:font-semibold"> 
+                            <Link href={"/dashboard"}>Dashboard</Link>
+                        </li>
+                        <li className="hover:font-semibold"> 
+                            <Link href={"/about"}>About</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

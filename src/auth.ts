@@ -21,7 +21,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                
             }  
             if (Date.now() < token.accessTokenExpires){
-                console.log("TOKEN STILL VALID");
                 return token;
 
             } else {

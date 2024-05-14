@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen">
         <NavBar />
-        <main className="mt-32">
+        <main className="mt-24">
         {children}
         </main>
         </body>
