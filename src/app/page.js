@@ -1,4 +1,4 @@
-
+import { SignIn } from "../components/ui/loginButton";
 
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold w-full text-center">Welcome To Octogroove</h1>
         <p className="leading-5 "> Octogroove is a web app designed to maximize your Spotify experince!View your top eight tracks and artists. See and save your Spotify weekly playlists. Create your own playlists in our dashboard. Click on the button below to log in to you Spotify to get started!  </p>
         <h2 className="w-full text-center font-bold text-2xl"> Login to Spotify</h2>
-        <button className="py-3 px-5 bg-green-500 rounded-2xl text-md w-24 font-bold">Login</button>
+        <SignIn />
       </div>
    </main>
   );

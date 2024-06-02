@@ -1,13 +1,13 @@
-import {signIn} from "../../auth";
+import { signIn, auth } from "../../auth";
 
 export function SignIn() {
-    retrun (
+    return (
         <form action={async () => {
             'use server'
-            await signIn()
+            await signIn("Spotify", { redirectTo: "/dashboard"})
         }}
         >
-            <button type="submit"> Login </button>
+            <button type="submit" className="py-3 px-5 bg-green-500 rounded-2xl text-md w-24 font-bold"> Login </button>
         </form>
     )
 }

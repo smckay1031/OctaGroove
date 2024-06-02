@@ -9,10 +9,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             clientSecret: process.env.AUTH_SPOTIFY_SECRET,
         })
     ],
-    pages: {
-      signIn: "/login",
-    },
-
+ 
     callbacks: {
        async jwt({ token, account, user}) {
             if(account && user) {
@@ -66,6 +63,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             session.error = token.error
             if(token.userName) {
               session.user.acessToken = token.accessToken
+              session.user.refreshToken = token.refreshToken
               session.user.username = token.userName
             }
           return session
