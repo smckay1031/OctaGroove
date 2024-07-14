@@ -2,6 +2,8 @@
 
 export default function Dashboard() {
     return(
-        <h1>This is the Dashboard Page!</h1>
+        <main>
+            <h1>Dashboard</h1>
+        </main>
     );
 }
