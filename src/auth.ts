@@ -1,7 +1,6 @@
-import { profile } from "console";
 import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
-import { escape } from "querystring";
+
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
