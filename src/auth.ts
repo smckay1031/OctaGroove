@@ -83,6 +83,9 @@ declare module "next-auth" {
       access_token: string
       expires_in: number
       refresh_token: string
+      userImage: string
+      userId: string
+      userName: string
       error?: "RefreshAccessTokenError"
   }
 }
