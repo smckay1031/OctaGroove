@@ -14,15 +14,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
        async jwt({ token, account, user}) {
             if(account && user) {
                 return {
-                    ...token,
-                    accessToken: account.access_token,
-                    refreshToken: account.refresh_token,
-                    userName: account.providerAccountId,
-                    accessTokenExpires: account.expires_at * 1000
-                }; 
-            } else if (Date.now() < token.accessTokenExpires){
+                    access_token: account.access_token,
+                    refresh_token: account.refresh_token,
+                    userName: user.name,
+                    userImage: user.image,
+                    userID: user.id,
+                    expires_in: account.expires_at,
+                    currentTim: Date.now()
+                    }; 
+            } else if (Date.now() < token.expires_in * 1000 ){
                 return token;
-
             } else {
                 if (!token.refresh_token) throw new Error("Missing refresh token")
  
@@ -34,7 +35,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                           client_id: process.env.AUTH_SPOTIFY.ID!,
                           client_secret: process.env.AUTH_SPOTIFY_SECRET!,
                           grant_type: "refresh_token",
-                          refresh_token: token.refresh_token,
+                          refresh_token: token.refresh_token!
                         }),
                         method: "POST",
                       })
@@ -59,15 +60,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                   }
                 }   
         },
-        async session({ session, token }) {
+         async session({ session, token }) {
             session.error = token.error
             if(token.userName) {
-              session.user.acessToken = token.accessToken
-              session.user.refreshToken = token.refreshToken
-              session.user.username = token.userName
+              session.user.name = token.userName
+              session.user.image = token.userImage
+              console.log(token)
+              console.log(session)
             }
-          return session
-        }          
+            return session
+        }         
     });
 
 declare module "next-auth" {
@@ -79,7 +81,7 @@ declare module "next-auth" {
   declare module "next-auth/jwt" {
     interface JWT {
       access_token: string
-      expires_at: number
+      expires_in: number
       refresh_token: string
       error?: "RefreshAccessTokenError"
   }
