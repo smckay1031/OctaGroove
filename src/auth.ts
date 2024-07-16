@@ -3,6 +3,10 @@ import Spotify from "next-auth/providers/spotify";
 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    pages: {
+      signIn: "/login"
+    },
+
     providers: [
         Spotify({
             clientId: process.env.AUTH_SPOTIFY_ID,
