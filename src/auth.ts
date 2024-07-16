@@ -1,6 +1,7 @@
 import { profile } from "console";
 import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
+import { escape } from "querystring";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
@@ -18,9 +19,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     refresh_token: account.refresh_token,
                     userName: user.name,
                     userImage: user.image,
-                    userID: user.id,
+                    userId: user.id,
                     expires_in: account.expires_at,
-                    currentTim: Date.now()
                     }; 
             } else if (Date.now() < token.expires_in * 1000 ){
                 return token;
@@ -64,9 +64,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             session.error = token.error
             if(token.userName) {
               session.user.name = token.userName
+              session.user.id = token.userId
               session.user.image = token.userImage
-              console.log(token)
-              console.log(session)
+              session.user.access_token = token.access_token
+              session.user.refresh_token = token.refresh_token
             }
             return session
         }         
