@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { Monoton } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "../components/nav/nav";
+import { NavBar } from "./components/nav/nav";
 
 
 const inter = Inter({ 
