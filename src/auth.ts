@@ -61,8 +61,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                       return { ...token, error: "RefreshAccessTokenError" as const }
                      }
                   }
-                }   
-        },
+                },  
+        
          async session({ session, token }) {
             session.error = token.error
             if(token.userName) {
@@ -73,7 +73,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               session.user.refresh_token = token.refresh_token
             }
             return session
-        }         
+        },
+      },         
     });
 
 declare module "next-auth" {
