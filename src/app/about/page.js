@@ -1,0 +1,11 @@
+//About Page
+
+
+export default function About() {
+
+    return (
+        <div>
+            <h1 className="mt-32">This is the About Page!</h1>
+        </div>
+    )
+}
