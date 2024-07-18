@@ -1,4 +1,6 @@
+import { Span } from "next/dist/trace";
 import {auth, signIn, signOut} from "../../../auth";
+import AccountIcon from "../../../../lib/images/account_circle.svg";
 import Image from "next/image";
 
 export async function NavButton() {
@@ -12,7 +14,17 @@ export async function NavButton() {
               await signIn("spotify")
             }}
           >
-            <button type="submit" className="inline-flex justify-center items-center rounded-full text-xs h-10 w-28 ">Sign In</button>
+            <button type="submit" className="inline-flex items-center justify-between rounded-full text-sm font-medium px-2 py-1">
+              <Image
+                src={AccountIcon} 
+                alt="account"
+                width={28}
+                height={28}
+
+                className="mr-2"
+              />
+              <p className="p-1">Sign In</p>
+              </button>
           </form>
         )
     }
@@ -25,10 +37,10 @@ export async function NavButton() {
               await signOut()
             }}
           >
-            <button type="submit" className="inline-flex justify-center items-center rounded-full text-xs ">
-                <img src={session.user.image} className="h-10 w-10 rounded-full p-1" />
+            <button type="submit" className="inline-flex items-center justify-between rounded-full text-xs font-medium py-1 px-2">
+                <img src={session.user.image} className="rounded-full h-8 w-8 mr-2" />
                 <div className="flex flex-col p-1">
-                    <p className="p-1">Sign Out</p>
+                    <p className="flex-row flex ">Sign Out</p>
                 </div>
             </button>
           </form>
