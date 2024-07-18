@@ -18,7 +18,7 @@ export function Button() {
                 width={28}
                 height={28}
                 />
-                 <p className="text-slate-950 font-extrabold px-2">Login with Spotify </p>
+                 <p className="text-slate-950 font-bold px-2">Login with Spotify </p>
             </button>
         </form>
     );
