@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import { Monoton } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "./components/nav/nav";
-import { GetServerSession} from "next-auth/react";
-import { SessionProvider } from "./components/auth/sessionProvider";
 
 
 const inter = Inter({ 
