@@ -12,7 +12,7 @@ export async function NavButton() {
               await signIn("spotify")
             }}
           >
-            <button type="submit" className="inline-flex justify-center items-center rounded-full bg-slate-950 text-xs h-8 w-24 ">Sign In</button>
+            <button type="submit" className="inline-flex justify-center items-center rounded-full text-xs h-10 w-28 ">Sign In</button>
           </form>
         )
     }
@@ -25,10 +25,10 @@ export async function NavButton() {
               await signOut()
             }}
           >
-            <button type="submit" className="inline-flex justify-center items-center rounded-full bg-slate-950 text-xs ">
+            <button type="submit" className="inline-flex justify-center items-center rounded-full text-xs ">
                 <img src={session.user.image} className="h-10 w-10 rounded-full p-1" />
-                <div className="flex flex-col p-1 px-4">
-                    <p className="">Sign Out</p>
+                <div className="flex flex-col p-1">
+                    <p className="p-1">Sign Out</p>
                 </div>
             </button>
           </form>
