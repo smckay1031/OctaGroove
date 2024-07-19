@@ -75,7 +75,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               session.user.id = token.userId
               session.user.image = token.userImage
               session.user.access_token = token.access_token
-              session.user.refresh_token = token.refresh_token
               session.user.expires_at = token.expires_at
             }
             return session
