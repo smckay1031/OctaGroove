@@ -11,13 +11,12 @@ export default async function Dashboard() {
 
     const response = await fetch('https://api.spotify.com/v1/me/top/artists?limit=8&offset=0', {
         headers: {
-            Authorization: 'Bearer' + token
-        },
-        method: "GET"
+            'Authorization': 'Bearer ' + token
+        }
     });
 
     const artists = await response.json()
-    console.log(token);
+    console.log("Access_token:" + token);
     console.log(artists);
 
    

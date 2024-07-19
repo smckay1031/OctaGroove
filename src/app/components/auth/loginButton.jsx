@@ -1,6 +1,6 @@
 
 import Image from "next/image"
-import SpotifyLogo from "../../../../lib/images/Spotify_Logo.svg"
+import SpotifyLogo from "../../../../public/images/Spotify_Logo.svg"
 import { signIn } from "../../../auth";
 
 export function Button() {

@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
+import authURL from "../lib/spotify"
 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -11,6 +12,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         Spotify({
             clientId: process.env.AUTH_SPOTIFY_ID,
             clientSecret: process.env.AUTH_SPOTIFY_SECRET,
+            authorization: authURL
         })
     ],
  
