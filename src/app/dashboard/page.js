@@ -26,7 +26,7 @@ export default async function Dashboard() {
     return(
         <main>
         <h1 className=" mt-32">Dashboard</h1>
-        <p> </p>
+        <p> {artists.items.name}</p>
     </main>
     )
 }
