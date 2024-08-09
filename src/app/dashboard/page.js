@@ -11,7 +11,7 @@ export default async function Dashboard() {
     const medTerm = 'medium_term';
     const longTerm = 'long_term';
 
-    const response = await fetch(`https://api.spotify.com/v1/me/top/artists?limit=8&offset=0&time_range=${shortTerm}`, {
+    const response = await fetch(`https://api.spotify.com/v1/me/top/artists?limit=8&offset=0&time_range=${medTerm}`, {
         headers: {
             'Authorization': 'Bearer ' + token
         }
@@ -27,7 +27,7 @@ export default async function Dashboard() {
             {artists.items.map((items) =>(
                 <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
                     <img className="object-cover h-24 w-24 rounded-md " src={items.images[2].url} />
-                    <p className="text-xs leading-none font-light pl-1 w-24 h-8">{items.name}</p>
+                    <p className="text-xs leading-none font-light pl-2 w-24 h-8">{items.name}</p>
                  </li>
             ))}
             </ul>
