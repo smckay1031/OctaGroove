@@ -28,7 +28,7 @@ export default async function Dashboard() {
         <div className="grid grid-cols-4 gap-3 items-center" >
             {artists.items.map((items) =>(
                 <div key={items.id} className="w-24 h-40">
-                    <img className="object-cover h-4/6 " src={items.images[2].url} />
+                    <img className="object-cover h-4/6 rounded-md " src={items.images[2].url} />
                     <p className="text-sm font-light">{items.name}</p>
                 </div>
             ))}
