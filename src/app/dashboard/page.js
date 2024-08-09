@@ -21,13 +21,13 @@ export default async function Dashboard() {
 
     return(
         <main className="mt-16">
-        <div className="font-Inter w-max ml-5 bg-[#ffffff0a] pl-6 pr-2 pb-4 rounded-md shadow-md backdrop-blur border-[#ffffff10] border">
-            <h2 className="text-3xl font-bold text-center py-2"> Top Artists</h2>
+        <div className="font-Inter w-max ml-5 bg-[#ffffff0a] pl-6 pr-4 py-4 rounded-md shadow-md backdrop-blur border-[#ffffff10] border">
+            <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
             <ul className="grid grid-cols-4 items-center w-full" >
             {artists.items.map((items) =>(
-                <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-1">
+                <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
                     <img className="object-cover h-24 w-24 rounded-md " src={items.images[2].url} />
-                    <p className="text-xs leading-tight font-light ml-1 w-24 h-8">{items.name}</p>
+                    <p className="text-xs leading-none font-light pl-1 w-24 h-8">{items.name}</p>
                  </li>
             ))}
             </ul>
