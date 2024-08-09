@@ -9,7 +9,7 @@ export default async function Dashboard() {
     const token = session.user.access_token
     
 
-    const response = await fetch('https://api.spotify.com/v1/me/top/artists?limit=8&offset=0', {
+    const response = await fetch('https://api.spotify.com/v1/me/top/artists?limit=8&offset=0&time_range=long_term', {
         headers: {
             'Authorization': 'Bearer ' + token
         }
