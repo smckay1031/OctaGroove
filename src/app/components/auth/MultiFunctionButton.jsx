@@ -1,4 +1,4 @@
-import { Span } from "next/dist/trace";
+
 import {auth, signIn, signOut} from "../../../auth";
 import AccountIcon from "../../../../public/images/account_circle.svg";
 import Image from "next/image";
