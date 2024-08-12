@@ -2,6 +2,7 @@
 import {auth, signIn, signOut} from "../../../auth";
 import AccountIcon from "../../../../public/images/account_circle.svg";
 import Image from "next/image";
+import { redirect } from "next/dist/server/api-utils";
 
 export async function NavButton() {
     const session = await auth();
@@ -34,7 +35,7 @@ export async function NavButton() {
             <form
             action={async () => {
               "use server"
-              await signOut()
+              await signOut( {redirectTo: "/login"})
             }}
           >
             <button type="submit" className="inline-flex items-center justify-between rounded-full text-xs font-medium py-1 px-2">

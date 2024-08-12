@@ -8,7 +8,7 @@ export function Button() {
         <form
             action={async () => {
                 "use server"
-                await signIn("spotify", {redirectTo: "/dashboard"})
+                await signIn("spotify", {redirectTo: "/dashboard/range_short"})
             }}
             >
             <button className="bg-[#18D860] p-3 rounded-3xl inline-flex justify-center items-center" >
