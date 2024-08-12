@@ -16,7 +16,7 @@ export  async function ArtistShort() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#ffffff0a] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff10] border">
+        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
         <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
@@ -44,7 +44,7 @@ export async function ArtistMed() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#ffffff0a] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff10] border">
+        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
         <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
@@ -72,7 +72,7 @@ export async function ArtistLong() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#ffffff0a] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff10] border">
+        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
         <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
