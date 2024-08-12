@@ -3,7 +3,6 @@ import { NavBar } from "./components/nav/nav";
 export default function Home() {
   return (
   <>
-    <NavBar />
     <main className="h-screen flex justify-center">
        <div className="flex justify-center items-center flex-wrap p-10 border w-10/12"> 
          <h1 className="text-4xl font-bold w-full text-center">Welcome To Octagroove</h1>

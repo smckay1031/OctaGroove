@@ -15,7 +15,7 @@ export  async function NavBar() {
                             <Link href={'/'}>Home</Link>
                         </li>
                         <li className="hover:font-semibold"> 
-                            <Link href={"/dashboard"}>Dashboard</Link>
+                            <Link href={"/dashboard/range_short"}>Dashboard</Link>
                         </li>
                         <li className="hover:font-semibold"> 
                             <Link href={"/about"}>About</Link>
