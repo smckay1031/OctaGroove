@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { Monoton } from "next/font/google";
 import "./globals.css";
+import { NavBar } from "./components/nav/nav";
 
 
 const inter = Inter({ 
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen">
+        <NavBar />
         <main className="">
           {children}
         </main>
