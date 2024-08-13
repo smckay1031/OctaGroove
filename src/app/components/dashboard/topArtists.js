@@ -16,12 +16,12 @@ export  async function ArtistShort() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
-        <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
+        <div className=" h-72 font-Inter w-max bg-[#80808005] pl-6 pr-4 py-2 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <h2 className="text-2xl font-bold text-center pb-2"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
             <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
-                <img className="object-cover h-24 w-24 rounded-md " src={items.images[2].url} />
+                <img className="object-cover h-20 w-20 rounded-md " src={items.images[2].url} />
                 <p className="text-xs leading-none font-light pr-4 w-24 h-8">{items.name}</p>
              </li>
         ))}

@@ -4,7 +4,7 @@ export default function DashboardLayout( {children}) {
     return (
         <div className="flex">
             <SideBar />
-            <section> {children}</section>
+            <section className="pl-5"> {children}</section>
         </div>
     )
 
