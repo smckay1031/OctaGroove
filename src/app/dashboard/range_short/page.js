@@ -1,13 +1,15 @@
 
 import { ArtistShort } from "../../components/dashboard/topArtists"
 import {TopTracksShort} from "../../components/dashboard/topTracks"
+import { TopTracksMed } from "../../components/dashboard/topTracks"
 
-export  default function DashboardShort() {
 
-    return (
-        <div className="grid grid-cols-2 gap-2 w-full">
+export  default  async function DashboardShort() {
+
+        return (
+            <div className="flex gap-2">
             <TopTracksShort />
             <ArtistShort />
-        </div>
-    )
+            </div>
+        )
 }

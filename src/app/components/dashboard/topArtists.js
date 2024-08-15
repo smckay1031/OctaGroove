@@ -4,7 +4,7 @@ import { auth } from "../../../auth";
 //These are the server component for Top Artists short is within last few weeks, medium is within last 6 months, and long is in last year:
 
 //Last week
-export  async function ArtistShort() {
+export async function ArtistShort() {
     const session = await auth();
     const token = session.user.access_token;
 
@@ -16,8 +16,8 @@ export  async function ArtistShort() {
     const artists = await response.json()
 
     return (
-        <div className=" h-72 font-Inter w-max bg-[#80808005] pl-6 pr-4 py-2 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
-        <h2 className="text-2xl font-bold text-center pb-2"> Top Artists</h2>
+        <div className=" h-72 font-Inter bg-[#80808005] pl-6 pr-4 py-2 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <h2 className="text-xl font-bold text-center pb-2"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
             <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
@@ -44,8 +44,8 @@ export async function ArtistMed() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
-        <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
+        <div className="font-Inter w-max bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <h2 className="text-xl font-bold text-center pb-4"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
             <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
@@ -72,8 +72,8 @@ export async function ArtistLong() {
     const artists = await response.json()
 
     return (
-        <div className="font-Inter w-max ml-5 bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
-        <h2 className="text-3xl font-bold text-center pb-4"> Top Artists</h2>
+        <div className="font-Inter w-max bg-[#80808005] pl-6 pr-4 py-4 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <h2 className="text-xl font-bold text-center pb-4"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center w-full" >
         {artists.items.map((items) =>(
             <li key={items.id} className="list-decimal list-outside font-bold text-sm mx-2">
