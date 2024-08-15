@@ -19,8 +19,10 @@ export async function TopTracksShort() {
 
         if(sec > 10){
             return`${min}:${sec}`
-        } else {
+        } else if(sec < 10) {
             return `${min}:0${sec}`
+        } else (sec = 0){
+            return `${min}:00`
         }
             
     }
