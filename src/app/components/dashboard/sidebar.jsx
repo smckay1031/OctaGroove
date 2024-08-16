@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import Clock  from "../../../../public/images/🦆 icon _clock_.jpg"
-import list from "../../../../public/images/🦆 icon _list_.jpg"
+import clock from "../../../../public/images/icon _clock_.svg"
 
 
 export default async function SideBar() {
@@ -12,7 +11,6 @@ export default async function SideBar() {
             <div className="p-5 rounded-md bg-[#80808005] border border-[#ffffff27]">
                 <div>
                     <Image 
-                    src={Clock}
                     />
                     <h2 className="font-bold text-xl text-center pb-2">Results</h2>
                 </div>

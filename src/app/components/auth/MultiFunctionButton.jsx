@@ -21,7 +21,6 @@ export async function NavButton() {
                 alt="account"
                 width={28}
                 height={28}
-
                 className="mr-2"
               />
               <p className="p-1">Sign In</p>
