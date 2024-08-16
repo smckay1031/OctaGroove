@@ -33,7 +33,7 @@ async function TopTracks(range) {
     const tracks = await response.json();
     
     return(
-        <div className=" flex flex-col h-96 w-7/12 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <div className=" flex flex-col h-72 w-7/12 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
             <h2 className="text-xl font-bold text-center"> Top Tracks</h2>
             <div className="flex justify-around text-xs text-center font-semibold mb-1">
                 <h3 className="w-4/12"> Artist/Song</h3>
@@ -43,7 +43,7 @@ async function TopTracks(range) {
             <ul className="p-1 overflow-y-scroll">
                 {tracks.items.map((item) =>(
                     <div className="pl-4">
-                        <li key={item.id} className="list-decimal list-outisde my-1 py-0.5 text-xs leading-none font-extralight  bg-[#ffffff0b] rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border-0.5">
+                        <li key={item.id} className="list-decimal list-outisde my-1 py-0.5 text-xs leading-none font-light  bg-[#ffffff0b] rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border-0.5">
                             <div className="flex justify-around items-center">
                                 <div className="flex w-5/12">
                                     <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mr-1" />
