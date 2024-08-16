@@ -23,7 +23,7 @@ export async function NavButton() {
                 height={28}
                 className="mr-2"
               />
-              <p className="p-1">Sign In</p>
+              <p className="p-1 hover:font-semibold">Sign In</p>
               </button>
           </form>
         )
@@ -40,7 +40,7 @@ export async function NavButton() {
             <button type="submit" className="inline-flex items-center justify-between rounded-full text-xs font-medium py-1 px-2">
                 <img src={session.user.image} className="rounded-full h-8 w-8 mr-2" />
                 <div className="flex flex-col p-1">
-                    <p className="flex-row flex ">Sign Out</p>
+                    <p className="flex-row flex hover:font-semibold ">Sign Out</p>
                 </div>
             </button>
           </form>

@@ -34,7 +34,7 @@ async function TopTracks(range) {
     
     return(
         <div className=" flex flex-col h-72 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border" id="topTracks">
-            <h2 className="text-xl font-bold text-center"> Top Tracks</h2>
+            <h2 className="text-xl font-bold text-center pt-1"> Top Tracks</h2>
             <div className="flex justify-around text-xs text-center font-semibold mb-1">
                 <h3 className="w-4/12"> Artist/Song</h3>
                 <h3 className="w-2/5 pl-10"> Album</h3>
@@ -52,7 +52,7 @@ async function TopTracks(range) {
                                         <p className="h-1/2 overflow-hidden">{item.artists[0].name}</p>
                                     </div>
                                 </div>
-                                <p className="w-2/5 flex justify-center items-center overflow-hidden h-full">{item.album.name}</p>
+                                <p className="w-2/5 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>
                                 <p className="h-full flex items-center"> {getDuration(item.duration_ms)}</p>
                             </div>
                         </li>

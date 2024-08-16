@@ -24,8 +24,12 @@ body {
   height: 387px;
 }
 
-#sideBar {
+#sidebar {
   width: 239px;
+}
+
+#playlistSidebar {
+  min-height: 550px;
 }
 
 ::-webkit-scrollbar {

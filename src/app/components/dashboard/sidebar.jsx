@@ -1,31 +1,46 @@
 import Link from "next/link"
 import Image from "next/image"
-import clock from "../../../../public/images/icon _clock_.svg"
+import ResultsNav from "./resultsNav"
+import list from "../../../../public/images/icon _list_.svg"
 
+
+async function getPlaylists() {
+
+    return
+}
+//List of links passed to results sidebar as props 
+const results = [
+    {  
+        link: "/dashboard/range_short",
+        text: "Last Week"
+    },
+    {
+        link: "/dashboard/range_medium",
+        text: "Last 6 Months"
+    },
+    {
+        link: "/dashboard/range_long",
+        text:"Last Year"
+    }
+
+]
 
 export default async function SideBar() {
 
-
     return(
-        <aside className="ml-2" id="sideBar">
-            <div className="p-5 rounded-md bg-[#80808005] border border-[#ffffff27]">
-                <div>
+        <aside className="ml-2 font-Inter" id="sidebar">
+            <ResultsNav props={results} />
+            <div className="mt-2 p-5  rounded-md bg-[#80808005] border border-[#ffffff27]" id="playlistSidebar">
+                <div className="flex items-center justify-center">  
                     <Image 
+                    src={list}
+                    alt="list_icon"
+                    width={16}
+                    height={16}
                     />
-                    <h2 className="font-bold text-xl text-center pb-2">Results</h2>
+                    <h4 className="font-bold text-lg ml-2"> PLaylists</h4>
                 </div>
-               <ul className=" font-normal list-disc pl-5">
-                   <li>
-                    <Link href={"/dashboard/range_short"} className="hover:font-bold active:opacity-60">Last Week</Link>
-                   </li>
-                   <li>
-                    <Link href={"/dashboard/range_medium"} className="hover:font-bold active:opacity-60"> Last 6 Months</Link>
-                    </li>
-                   <li>
-                    <Link href={"/dashboard/range_long"} className="hover:font-bold active:opacity-60">Last Year</Link>
-                   </li>
-               </ul>
-            </div> 
+            </div>
         </aside>
     )
 }

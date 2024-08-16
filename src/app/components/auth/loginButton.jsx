@@ -11,7 +11,7 @@ export function Button() {
                 await signIn("spotify", {redirectTo: "/dashboard/range_short"})
             }}
             >
-            <button className="bg-[#18D860] p-3 rounded-3xl inline-flex justify-center items-center" >
+            <button className="bg-[#18D860] p-3 rounded-3xl inline-flex justify-center items-center active:opacity-60" >
                 <Image 
                 src={SpotifyLogo}
                 alt="Spotify"
