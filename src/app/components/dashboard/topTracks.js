@@ -33,7 +33,7 @@ async function TopTracks(range) {
     const tracks = await response.json();
     
     return(
-        <div className=" flex flex-col h-72 w-7/12 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <div className=" flex flex-col h-72 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border" id="topTracks">
             <h2 className="text-xl font-bold text-center"> Top Tracks</h2>
             <div className="flex justify-around text-xs text-center font-semibold mb-1">
                 <h3 className="w-4/12"> Artist/Song</h3>

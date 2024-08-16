@@ -19,6 +19,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+#topArtists, #topTracks {
+  width: 49%;
+  height: 387px;
+}
+
+#sideBar {
+  width: 239px;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
