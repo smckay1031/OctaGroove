@@ -1,11 +1,13 @@
 import { auth } from "../../../auth";
 
-export async function TopTracksShort() {
+
+//Function to create Top Tracks Card and fetch data 
+async function TopTracks(range) {
 
     const session = await auth();
     const token = session.user.access_token;
 
-    const response = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=8&offset=0&time_range=short_term', {
+    const response = await fetch(`https://api.spotify.com/v1/me/top/tracks?limit=8&offset=0&time_range=${range}_term`, {
         headers: {
             'Authorization': 'Bearer ' + token
         }
@@ -23,7 +25,7 @@ export async function TopTracksShort() {
             return `${min}:0${sec}`
         } else {
             return `${min}:00`
-        }
+        } 
             
     }
 
@@ -31,9 +33,9 @@ export async function TopTracksShort() {
     const tracks = await response.json();
     
     return(
-        <div className=" flex flex-col h-72 w-7/12 p-1 font-Inter bg-[#80808005] rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
+        <div className=" flex flex-col h-96 w-7/12 p-1 font-Inter bg-[#80808005] rounded-lg shadow-md shadow-black backdrop-blur border-[#ffffff27] border">
             <h2 className="text-xl font-bold text-center"> Top Tracks</h2>
-            <div className="flex justify-around text-xs text-center font-semibold">
+            <div className="flex justify-around text-xs text-center font-semibold mb-1">
                 <h3 className="w-4/12"> Artist/Song</h3>
                 <h3 className="w-2/5 pl-10"> Album</h3>
                 <h3 className=""> Duration</h3>
@@ -41,12 +43,12 @@ export async function TopTracksShort() {
             <ul className="p-1 overflow-y-scroll">
                 {tracks.items.map((item) =>(
                     <div className="pl-4">
-                        <li key={item.id} className="list-decimal list-outisde my-1 py-0.5 text-xs leading-none font-extralight  bg-[#ffffff0b] rounded-sm shadow-md shadow-black backdrop-blur border-[#ffffff27] border-0.5">
+                        <li key={item.id} className="list-decimal list-outisde my-1 py-0.5 text-xs leading-none font-extralight  bg-[#ffffff0b] rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border-0.5">
                             <div className="flex justify-around items-center">
                                 <div className="flex w-5/12">
                                     <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mr-1" />
-                                    <div className="flex flex-col h-6">
-                                        <p className="h-1/2 overflow-hidden">{item.name}</p>
+                                    <div className="flex flex-col h-7">
+                                        <p className="h-3 overflow-hidden mb-1">{item.name}</p>
                                         <p className="h-1/2 overflow-hidden">{item.artists[0].name}</p>
                                     </div>
                                 </div>
@@ -60,4 +62,16 @@ export async function TopTracksShort() {
         </div>
         
     )
+}
+//Last Week
+export function TopTracksShort() {
+    return TopTracks('short')
+}
+//Last 6 months
+export function TopTracksMed() {
+    return TopTracks('medium')
+}
+//Last Year
+export function TopTracksLong(){
+    return TopTracks('long')
 }
