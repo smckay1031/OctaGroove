@@ -34,7 +34,7 @@ export default function ResultsNav({props}) {
             const isActive = pathname === prop.link; 
                  return ( 
                     <li key={`${prop.text}`}>
-                        <Link href={prop.link} className={isActive ? ' underline font-bold text-lg   ': ' font-light hover:font-bold'}>{prop.text}</Link>
+                        <Link href={prop.link} className={isActive ? ' underline font-bold text-lg': 'font-light hover:font-bold'}>{prop.text}</Link>
                 </li>
         )})}       
        </ul>

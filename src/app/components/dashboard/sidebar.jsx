@@ -1,4 +1,5 @@
-import Link from "next/link"
+// ------------------------------------               Side Bar Component (Server)                               -------------------------------------------------
+
 import Image from "next/image"
 import ResultsNav from "./resultsNav"
 import list from "../../../../public/images/icon _list_.svg"
