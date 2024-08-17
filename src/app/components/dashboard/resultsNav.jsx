@@ -6,21 +6,6 @@ import clock from "../../../../public/images/icon _clock_.svg"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
-const results = [
-    {  
-        link: "/dashboard/range_short",
-        text: "Last Week"
-    },
-    {
-        link: "/dashboard/range_medium",
-        text: "Last 6 Months"
-    },
-    {
-        link: "/dashboard/range_long",
-        text:"Last Year"
-    }
-
-]
 
 //Code not finished. Need a way to make underlined when active..
 export default function ResultsNav({props}) {
@@ -47,13 +32,12 @@ export default function ResultsNav({props}) {
         {props.map((prop)=> {
 
             const isActive = pathname === prop.link; 
-                 return (
+                 return ( 
                     <li key={`${prop.text}`}>
-            <Link href={prop.link} className="hover:font-bold active:opacity-60" >{prop.text}</Link>
-           </li>  
-            )})}
-           
+                        <Link href={prop.link} className={isActive ? ' underline font-bold text-lg   ': ' font-light hover:font-bold'}>{prop.text}</Link>
+                </li>
+        )})}       
        </ul>
-    </div> 
+    </div>
     )
 }

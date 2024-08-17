@@ -16,7 +16,7 @@ const results = [
     },
     {
         link: "/dashboard/range_medium",
-        text: "Last 6 Months"
+        text: "Last Month"
     },
     {
         link: "/dashboard/range_long",
