@@ -17,7 +17,7 @@ async function GetTopArtist(range) {
 
     return (
         <div className=" h-72 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-md shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
-        <h2 className="text-xl font-bold mb-6"> Top Artists</h2>
+        <h2 className="text-2xl font-bold mb-6"> Top Artists</h2>
         <ul className="grid grid-cols-4 items-center justify-center w-full h-max px-16" >
         {artists.items.map((item) =>(
             <li key={item.id} className="list-decimal list-outside font-bold text-sm mx-2">
