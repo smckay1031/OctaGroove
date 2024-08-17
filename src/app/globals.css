@@ -25,11 +25,13 @@ body {
 }
 
 #sidebar {
-  width: 239px;
+  min-width: 239px;
+  height: screen;
 }
 
 #playlistSidebar {
-  min-height: 550px;
+  height: 75%;
+
 }
 
 ::-webkit-scrollbar {
@@ -42,7 +44,6 @@ body {
  border-style: solid;
  border-width: 0.5px;
  border-color: rgba(245, 245, 220, 0.25);
-
 }
 
 ::-webkit-scrollbar-thumb {

@@ -3,7 +3,7 @@ import { auth } from "../../../auth";
 
 //These are the server component for Top Artists short is within last few weeks, medium is within last 6 months, and long is in last year:
 
-//This is the Component function for the Top artist card and data Fetching 
+//This is the Component function for the top artist card and data Fetching 
 async function GetTopArtist(range) {
     const session = await auth();
     const token = session.user.access_token;
