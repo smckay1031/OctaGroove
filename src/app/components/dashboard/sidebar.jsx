@@ -43,10 +43,11 @@ export default async function SideBar() {
 
     const playlists = await getPlaylists();
 
-    return(
-        <aside className="ml-2 font-Inter felx flex-col" id="sidebar">
+    if(playlists) {
+        return(
+            <aside className="ml-2 font-Inter felx flex-col z-10" id="sidebar">
             <ResultsNav props={results} />
-            <div className="mt-2 py-5 px-1 rounded-xl bg-[#80808005] border border-[#ffffff27] backdrop-blur-md overflow-y-scroll" id="playlistSidebar">
+            <div className="mt-2 py-5 px-1 rounded-xl bg-[#00000040] border border-[#ffffff27] backdrop-blur-md overflow-y-scroll" id="playlistSidebar">
                 <div className="flex items-center justify-center pb-2">  
                     <Image 
                     src={list}
@@ -67,5 +68,8 @@ export default async function SideBar() {
                 </div>
             </div>
         </aside>
+        )
+    } return (
+        <div> No Data</div>
     )
 }

@@ -10,7 +10,7 @@ export  async function NavBar() {
                     <span className="font-semi-bold text-5xl font-Monoton">O</span>    
                 </div>
                <nav className=""> 
-                    <ul className="inline-flex gap-4 justify-center items-center cursor-pointer">
+                    <ul className="inline-flex gap-4 justify-center items-center cursor-pointer text-xl">
                         <li className="hover:font-semibold">
                             <Link href={'/'}>Home</Link>
                         </li>

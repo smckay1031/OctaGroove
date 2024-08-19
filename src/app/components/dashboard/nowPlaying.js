@@ -13,8 +13,8 @@ export function CurrentlyPlaying() {
     if(data){
         return (<div id="currentlyPlaying" className=" flex flex-col items-center justify-center">
             <img className="h-72 w-72 rounded-md" src={data.item.album.images[0].url} />
-            <p className="w-full px-5 font-bold h-min pt-2 ">{data.item.name}</p>
-            <p className="w-full px-5 leading-none">{data.item.artists[0].name}</p>
+            <p className="w-full px-5 font-bold h-min pt-2 leading-none">{data.item.name}</p>
+            <p className="w-full px-5 leading-none font-light">{data.item.artists[0].name}</p>
             </div>
 
         )

@@ -15,19 +15,28 @@ async function GetTopArtist(range) {
     });
     const artists = await response.json()
 
-    return (
-        <div className=" h-72 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
-        <h2 className="text-2xl font-bold mb-6"> Top Artists</h2>
-        <ul className="grid grid-cols-4 items-center justify-center w-full h-max px-16" >
-        {artists.items.map((item) =>(
-            <li key={item.id} className="list-decimal list-outside font-bold text-sm mx-2">
-                <img className="object-cover h-28 w-28 rounded-md " src={item.images[2].url} />
-                <p className="text-xs leading-none font-normal pr-4 w-24 h-8">{item.name}</p>
-             </li>
-        ))}
-        </ul>
-    </div>
-    )
+    if(response.ok) {
+
+        return (
+            <div className=" h-72 font-Inter bg-[#00000040] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+                <h2 className="text-2xl font-bold mb-6"> Top Artists</h2>
+                <ul className="grid grid-cols-4 items-center justify-center w-full h-max px-16" >
+                    {artists.items.map((item) =>(
+                    <li key={item.id} className="list-decimal list-outside font-bold text-sm mx-2">
+                    <img className="object-cover h-28 w-28 rounded-md " src={item.images[2].url} />
+                    <p className="text-sm leading-none font-normal pr-2 w-24 h-8">{item.name}</p>
+                    </li>
+                    ))}
+                </ul>
+            </div>
+        )}
+        if(!response.ok) {
+            return (
+                <div className=" h-72 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+                    <p>Unable to Fetch Data</p>
+                </div>
+            )
+        }
 }
 //Last Week
 export function ArtistShort() {

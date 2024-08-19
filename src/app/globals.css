@@ -20,12 +20,12 @@ body {
 }
 
 #topArtists, #topTracks {
-  width: 49%;
+  width: 780px;
   height: 387px;
 }
 
 #sidebar {
-  width: 239px;
+  min-width: 239px;
 }
 
 #playlistSidebar {
@@ -47,11 +47,37 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 1rem;
-border: 1px solid rgba(255, 255, 255, 0.15);
-height: 375px;
-width: 375px;
+border: 1px solid rgba(255, 255, 255, .15);
+height: 400px;
+width: 400px;
 border-radius: 1rem;
 box-shadow: 5px 5px 5px rgb(5, 5, 5);
+background-color: black;
+}
+
+#absoluteTop {
+position: absolute;
+ box-shadow: 0px 0px 10px rgba(66, 230, 1, 1);
+ background-color: rgb(66, 230, 1, 1);
+ top: 8rem;
+ left: 1px;
+ width: 100%;
+ height: 20px;
+ border-radius: 100%;
+ z-index: 0;
+ filter:blur(5rem)
+}
+
+#absoluteBottom {
+position: absolute;
+ background-color: rgb(222, 230, 1, .8);
+ bottom:0;
+ right: -100px;
+ width: 80%;
+ height: 100px;
+ border-radius: 80%;
+ z-index: 1;
+ filter:blur(8rem)
 }
 
 ::-webkit-scrollbar {
