@@ -1,37 +1,25 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
+import useSWR from "swr";
+import fetcher from "../../../../lib/fetcher";
 
+export function CurrentlyPlaying() {
 
-async function getPlaying() {
+    const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 5000});
 
-    const response = await fetch("/api/data/currently_playing")
-    const track = await response.json();
-    console.log(track)
-    return track;
-}
+    if(error){return (<div id="currentlyPlaying" > <p> Not Streaming </p></div>)};
+    if(isLoading){return (<div id="currentlyPlaying"><p> Loading...</p></div>)};
+    if(data){
+        return (<div id="currentlyPlaying" className=" flex flex-col items-center justify-center">
+            <img className="h-72 w-72 rounded-md" src={data.item.album.images[0].url} />
+            <p className="w-full px-5 font-bold h-min pt-2">{data.item.name}</p>
+            <p className="w-full px-5 leading-none">{data.item.artists[0].name}</p>
+            </div>
 
+        )
+    }
+    return (<div id="currentlyPlaying" > <p> Not Streaming </p></div>);
 
+    }   
 
-export async function CurrentlyPlaying() {
-
-    const [track, setTrack] = useState(null)
-
-    useEffect(()=> {
-        const i = setInterval(()=> {
-            fetch("/api/data/currently_playing")
-            .then((res)=> res.json())
-            .then((data)=> setTrack(data))
-            console.log(track)
-        }, 6000);
-        return clearInterval(i);
-    }, [track])
-
-    return (
-        <div className="w-28 h-28">
-            <h5>Now Playing</h5>
-            <button onClick={getPlaying}> fetch</button>
-            
-        </div>
-    )
-}
