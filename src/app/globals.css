@@ -20,7 +20,7 @@ body {
 }
 
 #topArtists, #topTracks {
-  width: 780px;
+  width: 49%;
   height: 400px;
 }
 
