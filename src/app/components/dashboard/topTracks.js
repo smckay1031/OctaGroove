@@ -32,8 +32,10 @@ async function TopTracks(range) {
 
     const tracks = await response.json();
     
-    return(
-        <div className=" flex flex-col h-72 p-1 font-Inter bg-[#80808005] rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border" id="topTracks">
+    if(response.ok) {
+
+        return(
+            <div className=" flex flex-col h-72 p-1 font-Inter bg-[#80808005] rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border" id="topTracks">
             <h2 className="text-2xl font-bold text-center"> Top Tracks</h2>
             <div className="flex justify-around text-xs text-center font-semibold">
                 <h3 className="w-4/12"> Artist/Song</h3>
@@ -59,9 +61,14 @@ async function TopTracks(range) {
                     </div>
                 ))}
             </ul>
-        </div>
-        
-    )
+        </div> 
+        )
+    }
+        return (
+            <div className=" h-72 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+                <p>Unable to Fetch Data</p>
+            </div>
+        )
 }
 //Last Week
 export function TopTracksShort() {
