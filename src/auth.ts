@@ -36,10 +36,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 return token;
             } else {
                 if (!token.refresh_token) throw new Error("Missing refresh token")
- 
                     // If the access token has expired, try to refresh it
                     try {
                       const response = await fetch("https://accounts.spotify.com/api/token", {
+                        method: 'POST',
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
                         body: new URLSearchParams({
                           client_id: process.env.AUTH_SPOTIFY.ID!,
@@ -47,29 +47,34 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                           grant_type: "refresh_token",
                           refresh_token: token.refresh_token!
                         }),
-                        method: "POST",
                       })
              
-                      const responseTokens = await response.json()
+                      const tokensOrError = await response.json()
              
-                      if (!response.ok) throw responseTokens
-                      console.log(responseTokens);
-                      return {
-                        ...token, // Keep the previous token properties
-                        access_token: responseTokens.access_token,
-                        expires_at: Math.floor(Date.now() / 1000 + responseTokens.expires_in),
-                        // Fall back to old refresh token, but note that
-                        // many providers may only allow using a refresh token once.
-                        refresh_token: responseTokens.refresh_token ?? token.refresh_token,
+                      if (!response.ok) throw tokensOrError
+
+                      const newTokens = tokensOrError as {
+                        access_token: string,
+                        expires_at: number,
+                        refresh_token?: string
                       }
-                    } catch (error) {
+                      
+                      token.access_token = newTokens.access_token
+                      token.expires_at = Math.floor(
+                      Date.now() / 1000 + newTokens.expires_at
+                      )
+                      
+                      if(newTokens.refresh_token){
+                        token.refresh_token = newTokens.refresh_token
+                        }
+                        
+                     } catch (error) {
                       console.error("Error refreshing access token", error)
                       // The error property will be used client-side to handle the refresh token error
                       return { ...token, error: "RefreshAccessTokenError" as const }
                      }
                   }
                 },  
-        
          async session({ session, token }) {
             session.error = token.error
             if(token.userName) {
@@ -80,7 +85,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               session.user.expires_at = token.expires_at
             }
             return session
-            
         },
       },         
     });
