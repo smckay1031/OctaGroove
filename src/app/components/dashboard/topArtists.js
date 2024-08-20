@@ -18,7 +18,7 @@ async function GetTopArtist(range) {
     if(response.ok) {
 
         return (
-            <div className=" font-Inter bg-[#00000040] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+            <div className=" font-Inter bg-[#00000040] pt-2 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
                 <h2 className="text-2xl font-bold mb-6"> Top Artists</h2>
                 <ul className="grid grid-cols-4 items-center justify-center w-full h-max px-16" >
                     {artists.items.map((item) =>(
@@ -32,7 +32,7 @@ async function GetTopArtist(range) {
         )}
         if(!response.ok) {
             return (
-                <div className=" h-72 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+                <div className=" h-80 max-w-80 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
                     <p>Unable to Fetch Data</p>
                 </div>
             )

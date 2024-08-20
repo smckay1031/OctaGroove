@@ -11,13 +11,16 @@ async function getPlaylists() {
     const session = await auth()
     const token = session.user.access_token
 
-    const response = await fetch('https://api.spotify.com/v1/me/playlists?offset=0', {
+    const response = await fetch('https://api.spotify.com/v1/me/playlists?limit=50&offset=0', {
         headers: {
             'Authorization': 'Bearer ' + token
         }
     })
-
-    return response.json();
+    if(response.ok) {
+        return response.json();
+    } else{
+        return null
+    }
 }
 
 
@@ -60,8 +63,8 @@ export default async function SideBar() {
                 <div>
                     <ul className="">
                         {playlists.items.map((list) =>(
-                            <div className="text-xs leading-none py-1 pl-5 my-0.5 list-disc">
-                                <li key={list.id} className="">{list.name}</li>
+                            <div className="text-sm leading-none py-0.5 pl-5 my-0.5 list-disc">
+                                <li key={list.id} className="capitalize">{list.name}</li>
                             </div>
                         ))}
                     </ul>
@@ -69,7 +72,10 @@ export default async function SideBar() {
             </div>
         </aside>
         )
-    } return (
-        <div> No Data</div>
+    } else {
+
+        return (
+        <div id="sidebar"> No Data</div>
     )
+} 
 }
