@@ -13,9 +13,6 @@ export default function ResultsNav({props}) {
 
     const pathname = usePathname();
 
-
-    console.log(pathname);
-
     return(
         <div className="p-5 rounded-2xl bg-[#00000080] border border-[#ffffff27] backdrop-blur-md">
         <div className="flex items-center justify-center">

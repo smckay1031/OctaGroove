@@ -4,7 +4,7 @@ import { TopTracksLong } from "../../components/dashboard/topTracks";
 export default function DashboardMedium() {
 
     return(
-        <section className="flex gap-4 justify-center pl-4">
+        <section className="flex gap-2 justify-center px-2">
             <TopTracksLong />
             <ArtistLong />
         </section>

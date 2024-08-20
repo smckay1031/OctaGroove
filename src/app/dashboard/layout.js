@@ -11,7 +11,7 @@ export default function DashboardLayout( {children}) {
                 <div id="absoluteTop"> <a className=" opacity-0"> o</a> </div>
                 <div>
                     <section className="max-w-full"> {children}</section>
-                    <div className="flex justify-between items-end pr-4">
+                    <div className="flex justify-between items-end gap-2 pr-4">
                     <ExploreCard />
                     <CurrentlyPlaying />
                     </div>
