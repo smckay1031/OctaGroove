@@ -64,11 +64,6 @@ async function TopTracks(range) {
         </div> 
         )
     }
-        return (
-            <div className=" h-80 w-80 font-Inter bg-[#80808005] pl-6 pt-2 pb-5 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
-                <p>Unable to Fetch Data</p>
-            </div>
-        )
 }
 //Last Week
 export function TopTracksShort() {

@@ -1,9 +1,10 @@
-import NextAuth from "next-auth";
+import NextAuth, {type User } from "next-auth";
 import Spotify from "next-auth/providers/spotify";
 import authURL from "../lib/spotify"
 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    debug: true,
     pages: {
       signIn: "/login"
     },
@@ -24,6 +25,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
        async jwt({ token, account, user}) {
             if(account && user) {
                 return {
+                    ...token,
                     access_token: account.access_token,
                     refresh_token: account.refresh_token,
                     userName: user.name,
@@ -38,14 +40,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 if (!token.refresh_token) throw new Error("Missing refresh token")
                     // If the access token has expired, try to refresh it
                     try {
+
+                      const params = {
+                        grant_type: "refresh_token",
+                          refresh_token: token.refresh_token,
+                          client_id: process.env.AUTH_SPOTIFY_ID,
+                          client_secret: process.env.AUTH_SPOTIFY_SECRET,
+                      }
+                       
                       const response = await fetch("https://accounts.spotify.com/api/token", {
                         method: 'POST',
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        body: new URLSearchParams({
-                          grant_type: "refresh_token",
-                          refresh_token: token.refresh_token!,
-                          client_id: process.env.AUTH_SPOTIFY.ID!,
-                        }),
+                        body: new URLSearchParams(params),
                       })
              
                       const tokensOrError = await response.json()
@@ -70,11 +76,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                      } catch (error) {
                       console.error("Error refreshing access token", error)
                       // The error property will be used client-side to handle the refresh token error
-                      return { ...token, error: "RefreshAccessTokenError" as const }
+                      return token.error = "RefreshTokenError"
                      }
                   }
                 },  
-         async session({ session, token }) {
+          async session({ session, token }) {
             session.error = token.error
             if(token.userName) {
               session.user.name = token.userName
@@ -83,17 +89,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               session.user.access_token = token.access_token
               session.user.expires_at = token.expires_at
             }
-            return session
+              return session 
         },
-      },         
-    });
-
-declare module "next-auth" {
+      },
+})         
+        
+  declare module "next-auth" {
     interface Session {
       error?: "RefreshAccessTokenError"
+      }
     }
-  }
-   
+        
   declare module "next-auth/jwt" {
     interface JWT {
       access_token: string
