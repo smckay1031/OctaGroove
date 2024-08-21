@@ -41,11 +41,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     // If the access token has expired, try to refresh it
                     try {
 
-                      const params = {
+                      const params: string = {
                         grant_type: "refresh_token",
-                          refresh_token: token.refresh_token,
-                          client_id: process.env.AUTH_SPOTIFY_ID,
-                          client_secret: process.env.AUTH_SPOTIFY_SECRET,
+                        refresh_token: token.refresh_token,
+                        client_id: process.env.AUTH_SPOTIFY_ID,
+                        client_secret: process.env.AUTH_SPOTIFY_SECRET,
                       }
                        
                       const response = await fetch("https://accounts.spotify.com/api/token", {

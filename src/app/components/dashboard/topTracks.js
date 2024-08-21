@@ -25,8 +25,13 @@ async function TopTracks(range) {
             return `${min}:0${sec}`
         } else {
             return `${min}:00`
-        } 
-            
+        }      
+    }
+
+    function Artists(item) {
+        const artistsNames = item.artists.map((artist)=>(artist.name))
+        const artistList = artistsNames.join(', ')
+        return artistList
     }
 
 
@@ -46,16 +51,16 @@ async function TopTracks(range) {
                 {tracks.items.map((item) =>(
                     <div className="pl-4">
                         <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5">
-                            <div className="flex justify-around items-center">
-                                <div className="flex w-5/12">
-                                    <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mr-1" />
-                                    <div className="flex flex-col h-7">
-                                        <p className="h-4 overflow-hidden mb-1 font-medium text-sm leading-none">{item.name}</p>
-                                        <p className="h-1/2 overflow-hidden font-extralight">{item.artists[0].name}</p>
+                            <div className="flex justify-between items-center">
+                                <div className="flex w-5/12 items-center">
+                                    <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1" />
+                                    <div className="flex flex-col h-8">
+                                        <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-medium text-sm leading-none hover:underline">{item.name}</a>
+                                        <p className="h-4 overflow-hidden font-extralight">{Artists(item)}</p>
                                     </div>
                                 </div>
                                 <p className="w-72 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>
-                                <p className="h-full flex items-center"> {getDuration(item.duration_ms)}</p>
+                                <p className="h-full flex items-center pr-1"> {getDuration(item.duration_ms)}</p>
                             </div>
                         </li>
                     </div>

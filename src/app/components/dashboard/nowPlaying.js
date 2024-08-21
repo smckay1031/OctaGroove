@@ -17,10 +17,10 @@ export function CurrentlyPlaying() {
         return (
         <div id="currentlyPlaying" className=" flex flex-col items-center justify-center">
             <img className="h-72 w-80 rounded-md" src={data.item.album.images[0].url} />
-                <div className="inline-flex items-center justify-between w-full mt-1 px-1">
+                <div className="inline-flex items-center justify-between w-full mt-4 px-1">
                     <div className="max-w-64">
-                        <a href={data.item.external_urls.spotify} target="_blank" className="w-full font-bold h-min py-1 leading-none hover:underline duration-200">{data.item.name}</a>
-                        <p className="w-full leading-none font-light">{artistList}</p>
+                        <a href={data.item.uri} target="_blank" className=" leading-none text-lg font-bold overflow-y-clip hover:underline">{data.item.name}</a>
+                        <p className="w-full leading-none font-extralight text-sm mt-2">{artistList}</p>
                     </div>
                 </div>
             </div>

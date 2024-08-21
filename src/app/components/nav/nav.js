@@ -11,13 +11,13 @@ export  async function NavBar() {
                 </div>
                <nav className=""> 
                     <ul className="inline-flex gap-4 justify-center items-center cursor-pointer text-xl">
-                        <li className="hover:font-semibold">
+                        <li className="hover:font-semibold duration-200">
                             <Link href={'/'}>Home</Link>
                         </li>
-                        <li className="hover:font-semibold"> 
+                        <li className="hover:font-semibold duration-200"> 
                             <Link href={"/dashboard/range_short"}>Dashboard</Link>
                         </li>
-                        <li className="hover:font-semibold"> 
+                        <li className="hover:font-semibold duration-200"> 
                             <Link href={"/about"}>About</Link>
                         </li>
                     </ul>

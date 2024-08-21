@@ -22,6 +22,7 @@ body {
 #topArtists, #topTracks {
   width: 49%;
   height: 400px;
+  line-height: 0.5rem;
 }
 
 #sidebar {
@@ -54,6 +55,7 @@ border-radius: 0.75rem;
 box-shadow: 5px 5px 10px rgb(0, 0, 0);
 background-color: rgba(0, 0, 0, 0.8);
 z-index: 2;
+line-height: 0.5rem;
 }
 
 #absoluteTop {
@@ -91,6 +93,6 @@ position: absolute;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.20);
   border-radius: 25px;
 }

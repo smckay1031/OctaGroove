@@ -18,13 +18,13 @@ async function GetTopArtist(range) {
     if(response.ok) {
 
         return (
-            <div className=" font-Inter bg-[#00000040] pt-2 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
-                <h2 className="text-2xl font-bold mb-6"> Top Artists</h2>
-                <ul className="grid grid-cols-4 items-center justify-center w-full h-max px-16" >
+            <div className=" font-Inter bg-[#00000040] pt-2 pl-8 rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border flex flex-col items-center justify-center" id="topArtists">
+                <h2 className="text-2xl font-bold mb-4"> Top Artists</h2>
+                <ul className="grid grid-cols-4 gap-2 items-center justify-center w-full" >
                     {artists.items.map((item) =>(
-                    <li key={item.id} className="list-decimal list-outside font-bold text-sm mx-2">
-                    <img className="object-cover h-28 w-28 rounded-md " src={item.images[2].url} />
-                    <p className="text-sm leading-none font-normal pr-2 w-24 h-8">{item.name}</p>
+                    <li key={item.id} className="list-decimal list-outside font-bold text-sm mx-2 hover:scale-110 duration-300">
+                    <img className="object-cover h-28 w-28 rounded-md" src={item.images[2].url} />
+                    <a href={item.uri} className="text-sm leading-none font-normal pr-2 w-24 h-8 hover:underline">{item.name}</a>
                     </li>
                     ))}
                 </ul>
