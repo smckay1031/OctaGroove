@@ -8,8 +8,7 @@ export async function GET() {
         headers: {
             'Authorization': 'Bearer ' + token
         }
-    }, 
-    {next: { revalidate: 360 } }
+    }
     )
     const data = await response.json();
     return Response.json(data)

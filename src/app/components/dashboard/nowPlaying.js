@@ -5,7 +5,7 @@ import fetcher from "../../../../lib/fetcher";
 
 export function CurrentlyPlaying() {
 
-    const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 5000});
+    const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000});
 
     if(error){return (<div id="currentlyPlaying" > <p> Not Streaming </p></div>)};
     if(isLoading){return (<div id="currentlyPlaying"><p> Loading...</p></div>)};
