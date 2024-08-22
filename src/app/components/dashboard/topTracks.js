@@ -40,32 +40,34 @@ async function TopTracks(range) {
     if(response.ok) {
 
         return(
-            <div className=" flex flex-col h-72 pt-2 font-Inter bg-[#00000040] rounded-3xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border" id="topTracks">
-            <h2 className="text-2xl font-bold text-center"> Top Tracks</h2>
-            <div className="flex justify-around text-xs text-center font-semibold">
-                <h3 className="w-4/12"> Artist/Song</h3>
-                <h3 className="w-2/5 pl-10"> Album</h3>
-                <h3 className=""> Duration</h3>
-            </div>
-            <ul className="p-1 overflow-y-scroll">
-                {tracks.items.map((item) =>(
-                    <div className="pl-4">
-                        <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5">
-                            <div className="flex justify-between items-center">
-                                <div className="flex w-5/12 items-center">
-                                    <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1" />
-                                    <div className="flex flex-col h-8">
-                                        <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-medium text-sm leading-none hover:underline">{item.name}</a>
-                                        <p className="h-4 overflow-hidden font-extralight">{Artists(item)}</p>
+            <div className=" flex flex-col font-Inter h-full" id="topTracks">
+            <h2 className="text-3xl font-bold text-center pb-2"> Top Tracks</h2>
+            <div className="bg-[#00000040] rounded-2xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border py-5">
+                <div className="flex justify-around text-xs text-center font-semibold">
+                    <h3 className="w-4/12"> Artist/Song</h3>
+                    <h3 className="w-2/5 pl-10"> Album</h3>
+                    <h3 className=""> Duration</h3>
+                </div>
+                <ul className="p-1 overflow-y-scroll">
+                    {tracks.items.map((item) =>(
+                        <div className="pl-4">
+                            <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5">
+                                <div className="flex justify-between items-center">
+                                    <div className="flex w-5/12 items-center">
+                                        <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1" />
+                                        <div className="flex flex-col h-8">
+                                            <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-medium text-sm leading-none hover:underline">{item.name}</a>
+                                            <p className="h-4 overflow-hidden font-extralight">{Artists(item)}</p>
+                                        </div>
                                     </div>
+                                    <p className="w-72 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>
+                                    <p className="h-full flex items-center pr-1"> {getDuration(item.duration_ms)}</p>
                                 </div>
-                                <p className="w-72 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>
-                                <p className="h-full flex items-center pr-1"> {getDuration(item.duration_ms)}</p>
-                            </div>
-                        </li>
-                    </div>
-                ))}
-            </ul>
+                            </li>
+                        </div>
+                    ))}
+                </ul>
+            </div>
         </div> 
         )
     }

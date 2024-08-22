@@ -15,11 +15,11 @@ export function CurrentlyPlaying() {
             const artistList = artistsNames.join(', ')
 
         return (
-        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center">
+        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip">
             <img className="h-72 w-80 rounded-md" src={data.item.album.images[0].url} />
                 <div className="inline-flex items-center justify-between w-full mt-4 px-1">
                     <div className="max-w-64">
-                        <a href={data.item.uri} target="_blank" className=" leading-none text-lg font-bold overflow-y-clip hover:underline">{data.item.name}</a>
+                        <a href={data.item.uri} target="_blank" className=" leading-none text-base font-bold overflow-y-clip hover:underline">{data.item.name}</a>
                         <p className="w-full leading-none font-extralight text-sm mt-2">{artistList}</p>
                     </div>
                 </div>
