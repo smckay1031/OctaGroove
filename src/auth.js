@@ -1,4 +1,4 @@
-import NextAuth, {type User } from "next-auth";
+import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
 import authURL from "../lib/spotify"
 
@@ -40,8 +40,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 if (!token.refresh_token) throw new Error("Missing refresh token")
                     // If the access token has expired, try to refresh it
                     try {
-
-                      const params: string = {
+                      const params = {
                         grant_type: "refresh_token",
                         refresh_token: token.refresh_token,
                         client_id: process.env.AUTH_SPOTIFY_ID,
@@ -55,22 +54,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                       })
              
                       const tokensOrError = await response.json()
-             
                       if (!response.ok) throw tokensOrError
 
-                      const newTokens = tokensOrError as {
-                        access_token: string,
-                        expires_at: number,
-                        refresh_token?: string
-                      }
-                      
+                      const newTokens = tokensOrError
                       token.access_token = newTokens.access_token
                       token.expires_at = Math.floor(
                       Date.now() / 1000 + newTokens.expires_at
                       )
                       
                       if(newTokens.refresh_token){
-                        token.refresh_token = newTokens.refresh_token
+                      token.refresh_token = newTokens.refresh_token
+
+                      return token
                         }
                         
                      } catch (error) {
@@ -80,8 +75,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                      }
                   }
                 },  
-          async session({ session, token }) {
-            session.error = token.error
+          async session({ session, token}) {
+             session.error = token.error
+
             if(token.userName) {
               session.user.name = token.userName
               session.user.id = token.userId
@@ -89,8 +85,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               session.user.access_token = token.access_token
               session.user.expires_at = token.expires_at
             }
-              return session 
-        },
+        }
       },
 })         
         
