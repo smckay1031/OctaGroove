@@ -41,7 +41,7 @@ async function TopTracks(range) {
 
         return(
             <div className=" flex flex-col font-Inter h-full" id="topTracks">
-            <h2 className="text-3xl font-bold text-center pb-2"> Top Tracks</h2>
+            <h2 className="text-3xl font-bold text-center pb-4"> Top Tracks</h2>
             <div className="bg-[#00000040] rounded-2xl shadow-md shadow-black backdrop-blur border-[#ffffff27] border py-5">
                 <div className="flex justify-around text-xs text-center font-semibold">
                     <h3 className="w-4/12"> Artist/Song</h3>
@@ -56,8 +56,8 @@ async function TopTracks(range) {
                                     <div className="flex w-5/12 items-center">
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1" />
                                         <div className="flex flex-col h-8">
-                                            <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-medium text-sm leading-none hover:underline">{item.name}</a>
-                                            <p className="h-4 overflow-hidden font-extralight">{Artists(item)}</p>
+                                            <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-light text-sm leading-none hover:underline hover:font-semibold duration-500">{item.name}</a>
+                                            <p className="h-4 overflow-hidden font-thin">{Artists(item)}</p>
                                         </div>
                                     </div>
                                     <p className="w-72 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>

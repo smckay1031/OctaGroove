@@ -1,18 +1,22 @@
 'use client'
-import { useState, useEffect} from "react"
+import { useState, Suspense} from "react"
 import useSWR from "swr";
 import fetcher from "../../../../lib/fetcher";
 
 
 function Recents(){
 
-    const {data} = useSWR('/api/data/recents', fetcher, {
+    const {data, isLoading} = useSWR('/api/data/recents', fetcher, {
         focusThrottleInterval: 120000,
         revalidateIfStale:false,
         revalidateOnFocus: false,
         refreshInterval: 120000,
     })
-
+    if(isLoading){
+        return (
+            <div className="h-80 flex items-center justify-center font-Inter text-2xl">Loading...</div>
+        )
+    }
     if(data) {
         function Artists(item) {
             const artistsNames = item.track.artists.map((artist)=>(artist.name))
@@ -21,7 +25,7 @@ function Recents(){
         }
 
         return (
-            <div id="recents" className=" overflow-y-scroll h-80 py-2 rounded-2xl">
+            <div id="recents" className="overflow-y-scroll h-80 py-2 rounded-2xl">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.items.map((item)=>(
                         <li key={item.track.id} className=" text-xs mt-1">
@@ -42,11 +46,14 @@ function Recents(){
 }
 
 function Reccomend() {
-    const {data} = useSWR('/api/data/reccomend', fetcher, {
+    const {data, isLoading} = useSWR('/api/data/reccomend', fetcher, {
         revalidateIfStale: false,
         revalidateOnFocus: false,
         focusThrottleInterval: 900000,
     })
+    if(isLoading) {
+        return(<div className="h-80 flex justify-center items-center font-Inter text-2xl"> Loading...</div>)
+    }
 
     if(data) {
 
@@ -57,7 +64,7 @@ function Reccomend() {
         }
 
         return (
-            <div id="recents" className=" overflow-y-scroll flex justify-center items-center rounded-2xl">
+            <div id="recents" className=" overflow-y-scroll h-80 flex justify-center items-center rounded-2xl">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.tracks.map((item)=>(
                         <li key={item.id} className=" text-xs">
@@ -87,16 +94,16 @@ export default function ExploreCard() {
     
     return (
         <div id="exploreCard" className="rounded-2xl font-Inter text-center">
-                <div className="pb-1">
+                <div className="">
                 <h5 className="text-3xl font-bold">Explore</h5>
                 </div>
-                <div className="inline-flex gap-1 pb-4 "> 
+                <div className="inline-flex gap-1 pb-4"> 
                     <button onClick={()=> setToggle('recents')} id="recents" className={recentActive? 'font-bold underline' : 'hover:font-extralight duration-200'}>Recents</button>
                     <button onClick={()=> setToggle('reccomend')} id="reccomend" className={reccomendAvtive? 'font-semibold underline' : 'hover:font-extralight duration-200'}>Reccomended</button>
             </div >
-                <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-6">
-                    { toggle === "recents" && <Recents />}
-                    { toggle ==="reccomend" && <Reccomend />}
+                <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-6 flex items-center justify-center">
+                        { toggle === "recents" && <Recents />}
+                        { toggle ==="reccomend" && <Reccomend />}
                 </div>
             </div>
     )
