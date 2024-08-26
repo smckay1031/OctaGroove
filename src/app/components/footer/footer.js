@@ -4,7 +4,7 @@ import Github from "../../../../public/images/github.svg"
 export default function Footer() {
 
     return(
-        <footer className="w-full mt-5 font-Inter relative">
+        <footer className="w-full mt-5 font-Inter relative bottom-0">
             <div className="flex justify-between items-end px-5">
                 <p className=""> Created By Sean McKay</p>
                 <div className="flex flex-col items-center justify-center pb-2">

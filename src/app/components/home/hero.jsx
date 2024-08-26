@@ -8,6 +8,7 @@ import {
     motion,
     animate,
   } from "framer-motion";
+import { signIn, auth } from "next-auth/react";
   
   const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#18D860"];
   
@@ -32,7 +33,7 @@ import {
         style={{
           backgroundImage,
         }}
-        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200 rounded-xl"
+        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200"
       >
         <div className="relative z-10 flex flex-col items-center">
           <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
@@ -58,6 +59,7 @@ import {
               scale: 0.985,
             }}
             className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+            onClick={()=> signIn('spotify', {redirectTo: "/dashboard/range_short"})}
           >
             Try It Now
             <Image src={Arrow} className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
