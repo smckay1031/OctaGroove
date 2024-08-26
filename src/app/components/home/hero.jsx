@@ -8,7 +8,7 @@ import {
     motion,
     animate,
   } from "framer-motion";
-import { signIn, auth } from "next-auth/react";
+import { signIn } from "next-auth/react";
   
   const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#18D860"];
   
@@ -45,7 +45,7 @@ import { signIn, auth } from "next-auth/react";
                 </a>
           </h1>
           <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed">
-            An Improved Dashboard for Spotify Users!
+            An Improved Dashboard For Spotify Users!
           </p>
           <motion.button
             style={{
@@ -58,7 +58,7 @@ import { signIn, auth } from "next-auth/react";
             whileTap={{
               scale: 0.985,
             }}
-            className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+            className=" h-14 group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
             onClick={()=> signIn('spotify', {redirectTo: "/dashboard/range_short"})}
           >
             Try It Now

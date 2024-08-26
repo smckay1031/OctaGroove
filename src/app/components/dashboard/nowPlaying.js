@@ -2,20 +2,21 @@
 
 import useSWR from "swr";
 import fetcher from "../../../../lib/fetcher";
+import Loading from "../UI/loading";
 
 export function CurrentlyPlaying() {
 
     const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000, refreshWhenHidden: false});
 
-    if(error){return (<div id="currentlyPlaying" > <p> Not Streaming </p></div>)};
-    if(isLoading){return (<div id="currentlyPlaying"><p> Loading...</p></div>)};
+    if(error){return (<div id="currentlyPlaying" > <p className="font-Inter font-bold"> Not Streaming </p></div>)};
+    if(isLoading){return (<div id="currentlyPlaying" className="inline-flex items-center justify-center"> <Loading /></div>)};
     if(data){
-        if(data.item) {
+        if(data.item) { 
             const artistsNames = data.item.artists.map((artist)=>(artist.name))
             const artistList = artistsNames.join(', ')
 
         return (
-        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip duration-500 ease-in-out">
+        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip">
             <img className="h-72 w-80 rounded-md" src={data.item.album.images[0].url} />
                 <div className="inline-flex items-center justify-between w-full mt-4 px-1">
                     <div className="max-w-64">
