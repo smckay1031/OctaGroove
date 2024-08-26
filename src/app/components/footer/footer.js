@@ -5,9 +5,9 @@ export default function Footer() {
 
     return(
         <footer className="w-full mt-5 font-Inter relative">
-            <div className="flex justify-between px-5 py-2">
+            <div className="flex justify-between items-end px-5">
                 <p className=""> Created By Sean McKay</p>
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center pb-2">
                     <p>Socials</p>
                     <a href="">
                     <Image
