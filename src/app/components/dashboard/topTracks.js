@@ -54,7 +54,7 @@ async function TopTracks(range) {
                             <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5">
                                 <div className="flex justify-between items-center">
                                     <div className="flex w-5/12 items-center">
-                                        <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1" />
+                                        <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
                                         <div className="flex flex-col h-8">
                                             <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-light text-sm leading-none hover:underline hover:font-semibold duration-500">{item.name}</a>
                                             <p className="h-4 overflow-hidden font-thin">{Artists(item)}</p>

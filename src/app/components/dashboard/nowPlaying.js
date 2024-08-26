@@ -5,7 +5,7 @@ import fetcher from "../../../../lib/fetcher";
 
 export function CurrentlyPlaying() {
 
-    const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000});
+    const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000, refreshWhenHidden: false});
 
     if(error){return (<div id="currentlyPlaying" > <p> Not Streaming </p></div>)};
     if(isLoading){return (<div id="currentlyPlaying"><p> Loading...</p></div>)};
@@ -15,7 +15,7 @@ export function CurrentlyPlaying() {
             const artistList = artistsNames.join(', ')
 
         return (
-        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip">
+        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip duration-500 ease-in-out">
             <img className="h-72 w-80 rounded-md" src={data.item.album.images[0].url} />
                 <div className="inline-flex items-center justify-between w-full mt-4 px-1">
                     <div className="max-w-64">

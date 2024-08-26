@@ -5,8 +5,9 @@ export async function GET() {
     const session = await auth()
     const token = session.user.access_token;
     
+    const offset = Math.floor(Math.random() *25)
 
-    const seedResponse =  await fetch('https://api.spotify.com/v1/me/top/tracks?limit=5&offset=5&time_range=medium_term',{
+    const seedResponse =  await fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&offset=${offset}&time_range=short_term`,{
         headers: {
             'Authorization': 'Bearer ' + token
         }

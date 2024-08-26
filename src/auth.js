@@ -36,6 +36,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           current_time: Date.now(),
         };
       } else if (Date.now() < token.expires_at * 1000) {
+        console.log(token.refresh_token)
         return token;
       } else {
         if (!token.refresh_token) throw new Error("Missing refresh token");
@@ -71,7 +72,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         } catch (error) {
           console.error("Error refreshing access token", error);
           // The error property will be used client-side to handle the refresh token error
-          return (token.error = "RefreshTokenError");
+          return token.error = "RefreshTokenError";
         }
       }
     },
@@ -81,6 +82,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       session.user.image = token.userImage;
       session.user.access_token = token.access_token;
       session.user.refresh_token = token.refresh_token;
+      console.log(session.user.refresh_token)
       return session 
     }
   },

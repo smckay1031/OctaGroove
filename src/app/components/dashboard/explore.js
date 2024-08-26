@@ -2,19 +2,20 @@
 import { useState, Suspense} from "react"
 import useSWR from "swr";
 import fetcher from "../../../../lib/fetcher";
+import Loading from "../UI/loading"
 
 
 function Recents(){
 
-    const {data, isLoading} = useSWR('/api/data/recents', fetcher, {
+    const {data, isLoading, isValidating} = useSWR('/api/data/recents', fetcher, {
         focusThrottleInterval: 120000,
         revalidateIfStale:false,
         revalidateOnFocus: false,
         refreshInterval: 120000,
     })
-    if(isLoading){
+    if(isLoading || isValidating ){
         return (
-            <div className="h-80 flex items-center justify-center font-Inter text-2xl">Loading...</div>
+            <div className="h-80 flex items-center justify-center font-Inter text-2xl"> <p className="animate-pulse duration-500 font-semibold">Loading </p><Loading /></div>
         )
     }
     if(data) {
@@ -46,13 +47,13 @@ function Recents(){
 }
 
 function Reccomend() {
-    const {data, isLoading} = useSWR('/api/data/reccomend', fetcher, {
+    const {data, isLoading, isValidating} = useSWR('/api/data/reccomend', fetcher, {
         revalidateIfStale: false,
         revalidateOnFocus: false,
         focusThrottleInterval: 900000,
     })
-    if(isLoading) {
-        return(<div className="h-80 flex justify-center items-center font-Inter text-2xl"> Loading...</div>)
+    if(isLoading || isValidating) {
+        return(<div className="h-80 flex justify-center items-center font-Inter text-2xl"><p className=" animate-pulse duration-500 font-semibold">Loading </p> <Loading /> </div>)
     }
 
     if(data) {
