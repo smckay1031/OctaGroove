@@ -4,8 +4,8 @@ import { NavButton} from "../auth/MultiFunctionButton";
 
 export  async function NavBar() {
     return (
-        <header className=" font-Inter flex items-center justify-center py-1 relative top-0 z-50 px-5 pt-5">
-            <div className= "py-2 px-5 w-full inline-flex justify-between items-center backdrop-blur-xl bg-[#00000005] border-[#ffffff35] border-b-2 border-r-2 rounded-2xl">
+        <header className=" font-Inter flex items-center justify-center py-1 absolute top-0 z-50 pl-5 pt-5 w-full">
+            <div className= "py-2 px-5 w-full inline-flex justify-between items-center backdrop-blur-xl bg-[#00000005] border-[#ffffff35] border-b">
                 <div className="flex gap-1 items-center">
                     <span className="font-semi-bold text-5xl font-Monoton">O</span>    
                 </div>
@@ -16,9 +16,6 @@ export  async function NavBar() {
                         </li>
                         <li className="hover:font-semibold duration-200"> 
                             <Link href={"/dashboard/range_short"}>Dashboard</Link>
-                        </li>
-                        <li className="hover:font-semibold duration-200"> 
-                            <Link href={"/about"}>About</Link>
                         </li>
                     </ul>
                 </nav>

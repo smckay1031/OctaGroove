@@ -8,7 +8,7 @@ export function CurrentlyPlaying() {
 
     const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000, refreshWhenHidden: false});
 
-    if(error){return (<div id="currentlyPlaying" > <p className="font-Inter font-bold"> Not Streaming </p></div>)};
+    if(error){return (<div id="currentlyPlaying" > <p className="font-Inter font-bold "> Not Streaming </p></div>)};
     if(isLoading){return (<div id="currentlyPlaying" className="inline-flex items-center justify-center"> <Loading /></div>)};
     if(data){
         if(data.item) { 

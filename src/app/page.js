@@ -1,16 +1,56 @@
-"use client"
+
 
 import {AuroraHero} from "./components/home/hero"
+import Card from "./components/home/card1"
+import Image from "next/image";
+import ScreenShot from "../../public/images/Screenshot 2024-08-27 132902.png"
+
 
 export default function Home() {
 
+
+  const cards = [
+    {
+      header: 'Top Artists',
+      body: " See your top eight artists from on Spotify. Change the duration of the results with the last week, last month, or last year."
+    }, 
+    {
+      header: 'Top Tracks',
+      body: " See your top eight tracks from on Spotify. Change the duration of the results with the last week, last month, or last year."
+     },
+     {
+      header: 'More',
+      body: "View your most recent tracks, get reccomendations based on your current listening, and see your current playlists."
+     }
+
+  ]
+
   return (
   <>
-    <main className="h-screen flex justify-center font-Inter">
-      <hero id="hero" className="w-full h-screen absolute top-0">
+    <main className="relative">
+      <hero id="hero" className="w-full h-screen">
         <AuroraHero />
-        <h1> Welcome to Octagroove</h1>
       </hero>
+      <section className="flex flex-col justify-center items-center py-60 w-full relative z-20">
+        <h2 className="text-6xl pb-32 font-bold">Get Your Top 8</h2>
+        <div className="flex flex-wrap justify-center gap-4"> 
+        {cards.map((card) =>(
+          <Card  prop={card} />
+        ))
+      }
+      </div>
+      </section>
+      <article className="flex flex-col items-center justify-center py-64 lg:px-64 px-10 " >
+        <h3 className="text-6xl pb-16 font-bold">About</h3>
+        <div className="flex flex-wrap items-center justify-center gap-10">
+          <Image
+          src={ScreenShot}
+          height={200} 
+          className=" rounded-2xl pt-24"
+          />
+          <p className=" h-min pt-16"> OctaGroove is an online dashboard designed to be used with your Spotify app to enhance your listening experience. You'll have an <span className="font-bold text-lg">enhanced UI experience</span> that allows you to view your top eight items. <span className="font-bold text-lg">Your data is never stored on our servers and is never shared with anyone.</span> Simply sign in to your Spotify account to get started.</p>
+        </div>
+      </article>
     </main>
   </>
   );

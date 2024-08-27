@@ -1,12 +1,14 @@
 'use client'
 import Arrow from "../../../../public/images/Arrow_Right.svg"
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
     useMotionTemplate,
     useMotionValue,
     motion,
-    animate,
+    animate, 
+    useScroll,
+    useTransform, 
   } from "framer-motion";
 import { signIn } from "next-auth/react";
   
@@ -23,6 +25,12 @@ import { signIn } from "next-auth/react";
         repeatType: "mirror",
       });
     }, []);
+
+    const ref = useRef(null)
+    const {scrollYProgress} = useScroll(ref)
+    const fadeProgress = useTransform(scrollYProgress, [0, 1], [1, 0])
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 0.8])
+    const blurProgress = useTransform(scrollYProgress, [0, 1], ['blur(0rem)', "blur(2rem)"])
   
     const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000000 50%, ${color})`;
     const border = useMotionTemplate`1px solid ${color}`;
@@ -32,8 +40,13 @@ import { signIn } from "next-auth/react";
       <motion.section
         style={{
           backgroundImage,
+          opacity: fadeProgress,
+          scale: scaleProgress,
+          filter: blurProgress,
         }}
-        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200"
+        viewport={{margin: '-400px'}}
+        ref={ref}
+        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200 z-0 sticky top-0"
       >
         <div className="relative z-10 flex flex-col items-center">
           <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
@@ -66,7 +79,7 @@ import { signIn } from "next-auth/react";
           </motion.button>
         </div>
   
-        <div className="absolute inset-0 z-0">
+        <div className="absolute\ inset-0 z-0">
         </div>
       </motion.section>
     );
