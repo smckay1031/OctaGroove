@@ -12,14 +12,17 @@ export default function Home() {
 
   const cards = [
     {
+      id: "1",
       header: 'Top Artists',
       body: " See your top eight artists from on Spotify. Change the duration of the results with the last week, last month, or last year."
     }, 
     {
+      id:"2",
       header: 'Top Tracks',
       body: " See your top eight tracks from on Spotify. Change the duration of the results with the last week, last month, or last year."
      },
      {
+      id:"3",
       header: 'More',
       body: "View your most recent tracks, get reccomendations based on your current listening, and see your current playlists."
      }
