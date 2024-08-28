@@ -36,6 +36,7 @@ body {
 #topArtists, #topTracks {
   width: 49%;
   line-height: 0.5rem;
+  text-overflow: ellipsis;
 }
 
 #sidebar {

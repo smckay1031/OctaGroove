@@ -54,13 +54,13 @@ async function TopTracks(range) {
                                 <div className="flex justify-between items-center">
                                     <div className="flex w-5/12 items-center">
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
-                                        <div className="flex flex-col h-8">
-                                            <a  href={item.uri} className="h-5 overflow-hidden mb-1 font-light text-sm leading-none hover:underline hover:font-semibold duration-500">{item.name}</a>
-                                            <p className="h-4 overflow-hidden font-thin">{Artists(item)}</p>
+                                        <div className="h-8">
+                                            <a  href={item.uri} className="font-light text-sm leading-none hover:underline hover:font-semibold duration-500"><p className="block overflow-ellipsis h-5 overflow-hidden pt-0.5 leading-4">{item.name}</p></a>
+                                            <p className="h-4 mt-0.5 overflow-hidden font-thin">{Artists(item)}</p>
                                         </div>
                                     </div>
-                                    <p className="w-72 flex justify-center items-center overflow-hidden min-h-8">{item.album.name}</p>
-                                    <p className="h-full flex items-center pr-1"> {getDuration(item.duration_ms)}</p>
+                                    <p className="w-60 flex items-center justify-center text-sm leading-none overflow-hidden overflow-ellipsis max-h-9 font-normal">{item.album.name}</p>
+                                    <p className="h-full flex items-center pr-1 text-sm font-normal"> {getDuration(item.duration_ms)}</p>
                                 </div>
                             </li>
                         </div>
