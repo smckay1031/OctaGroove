@@ -59,7 +59,7 @@ async function TopTracks(range) {
                                             <p className="h-4 mt-0.5 overflow-hidden font-thin">{Artists(item)}</p>
                                         </div>
                                     </div>
-                                    <p className="w-60 flex items-center justify-center text-sm leading-none overflow-hidden overflow-ellipsis max-h-9 font-normal">{item.album.name}</p>
+                                    <p className="w-60 flex justify-center overflow-hidden max-h-8 font-normal leading-4">{item.album.name}</p>
                                     <p className="h-full flex items-center pr-1 text-sm font-normal"> {getDuration(item.duration_ms)}</p>
                                 </div>
                             </li>
