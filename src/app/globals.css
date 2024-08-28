@@ -34,17 +34,14 @@ body {
 
 
 #topArtists, #topTracks {
-  width: 49%;
   line-height: 0.5rem;
+  flex-grow: inherit;
 }
 
 #sidebar {
-  min-width: 239px;
+  min-width: 15%;
 }
 
-#playlistSidebar {
-  height: 755px;
-}
 
 #exploreCard {
   width: 72%;
@@ -70,19 +67,33 @@ z-index: 2;
 line-height: 0.5rem;
 }
 
+@media screen and (max-width: 1024px) {
+  #currentlyPlaying {
+    display: none;
+  }
+  
+  #exploreCard {
+    width: 100%;
+  }
+  #topArtist {
+    line-height: 0px;
+
+  }
+}
+
 
 #absoluteBottom {
 position: absolute;
 animation-name: colorChange;
 animation-duration: 30s;
 animation-iteration-count: infinite;
- bottom:0;
+ bottom:0%;
  right: -100px;
  width: 80%;
  height: 45%;
  border-radius: 80%;
  z-index: -1;
- filter:blur(10rem)
+ filter:blur(10rem);
 }
 
 ::-webkit-scrollbar {

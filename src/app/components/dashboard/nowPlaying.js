@@ -8,18 +8,18 @@ export function CurrentlyPlaying() {
 
     const {data, error, isLoading} = useSWR('/api/data/currently_playing', fetcher, {refreshInterval: 10000, refreshWhenHidden: false});
 
-    if(error){return (<div id="currentlyPlaying" > <p className="font-Inter font-bold "> Not Streaming </p></div>)};
-    if(isLoading){return (<div id="currentlyPlaying" className="inline-flex items-center justify-center"> <Loading /></div>)};
+    if(error){return (<div id="currentlyPlaying" > <p className="font-Inter font-bold lg:flex hidden "> Not Streaming </p></div>)};
+    if(isLoading){return (<div id="currentlyPlaying" className="lg:flex items-center justify-center hidden "> <Loading /></div>)};
     if(data){
         if(data.item) { 
             const artistsNames = data.item.artists.map((artist)=>(artist.name))
             const artistList = artistsNames.join(', ')
 
         return (
-        <div id="currentlyPlaying" className=" flex flex-col items-center justify-center overflow-y-clip">
+        <div id="currentlyPlaying" className="">
             <img className="h-72 w-80 rounded-md" src={data.item.album.images[0].url} />
                 <div className="inline-flex items-center justify-between w-full mt-4 px-1">
-                    <div className="max-w-64">
+                    <div className="lg:max-w-64">
                         <a href={data.item.uri} target="_blank" className=" leading-none text-base font-bold overflow-y-clip hover:underline">{data.item.name}</a>
                         <p className="w-full leading-none font-extralight text-sm mt-2">{artistList}</p>
                     </div>

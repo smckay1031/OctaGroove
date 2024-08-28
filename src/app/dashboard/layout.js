@@ -10,7 +10,7 @@ export default function DashboardLayout( {children}) {
                 <SideBar />
                 <div>
                     <section className="max-w-full"> {children}</section>
-                    <div className="flex justify-between items-end gap-2 pr-4">
+                    <div className="flex items-end gap-2 pr-4">
                     <ExploreCard />
                     <CurrentlyPlaying />
                     </div>

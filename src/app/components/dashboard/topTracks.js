@@ -52,14 +52,14 @@ async function TopTracks(range) {
                         <div className="pl-4" key={item.id}>
                             <li className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5 min-h-10">
                                 <div className="flex justify-between items-center">
-                                    <div className="flex w-5/12 items-center">
+                                    <div className="flex lg:w-5/12 w-32 items-center">
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
                                         <div className="h-8">
-                                            <a  href={item.uri} className="font-light text-sm leading-none hover:underline hover:font-semibold duration-500"><p className="block overflow-ellipsis h-5 overflow-hidden pt-0.5 leading-4">{item.name}</p></a>
-                                            <p className="h-4 mt-0.5 overflow-hidden font-thin">{Artists(item)}</p>
+                                            <a  href={item.uri} className="font-light text-sm leading-none hover:underline hover:font-semibold duration-500"><p className="block h-5 overflow-hidden pt-0.5 leading-4">{item.name}</p></a>
+                                            <p className="h-4 mt-0.5 overflow-hidden font-thin leading-4">{Artists(item)}</p>
                                         </div>
                                     </div>
-                                    <p className="w-60 flex justify-center overflow-hidden max-h-8 font-normal leading-4">{item.album.name}</p>
+                                    <p className="lg:w-60 w-32 flex justify-center overflow-hidden max-h-8 font-normal leading-4">{item.album.name}</p>
                                     <p className="h-full flex items-center pr-1 text-sm font-normal"> {getDuration(item.duration_ms)}</p>
                                 </div>
                             </li>

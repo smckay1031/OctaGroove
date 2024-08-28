@@ -4,7 +4,7 @@ import { TopTracksMed } from "../../components/dashboard/topTracks";
 export default function DashboardMedium() {
 
     return(
-        <section className="flex gap-2 justify-center px-2">
+        <section className="grid md:grid-cols-2  gap-2 px-5">
             <TopTracksMed />
             <ArtistMed />
         </section>

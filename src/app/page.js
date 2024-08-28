@@ -36,7 +36,7 @@ export default function Home() {
         <AuroraHero />
       </hero>
       <section className="flex flex-col justify-center items-center py-60 w-full relative z-20">
-        <h2 className="text-6xl pb-32 font-bold">Get Your Top 8</h2>
+        <h2 className="text-6xl pb-32 font-bold px-10 text-center">Get Your Top 8</h2>
         <div className="flex flex-wrap justify-center gap-4"> 
         {cards.map((card) =>(
           <Card  key={card.id} prop={card} />
@@ -45,7 +45,7 @@ export default function Home() {
       </div>
       </section>
       <article className="flex flex-col items-center justify-center py-64 lg:px-64 px-10 " >
-        <h3 className="text-6xl pb-8 font-bold">About</h3>
+        <h3 className="text-6xl pb-8 font-bold px-8">About</h3>
         <div className="flex flex-wrap items-center justify-center w-full">
           <p className=" w-1/2 flex-grow pt-20 px-5"> <span className="font-bold text-lg">OctaGroove</span> is an online dashboard designed to be used with your Spotify app to enhance your listening experience. You will have an <span className="font-bold text-lg">enhanced UI experience</span> that allows you to view your top eight items. <span className="font-bold text-lg">Your data is never stored on our servers and is never shared with anyone.</span> Simply sign in to your Spotify account to get started.</p>
           <Image
