@@ -63,8 +63,8 @@ export default async function SideBar() {
                 <div className="p-1">
                     <ul className=" overflow-y-scroll">
                         {playlists.items.map((list) =>(
-                            <div className="text-sm leading-none py-0.5 pl-5 my-0.5">
-                                <li key={list.id} className="capitalize">
+                            <div key={list.id} className="text-sm leading-none py-0.5 pl-5 my-0.5">
+                                <li className="capitalize">
                                     <a href={list.uri} target="_blank" className=" no-underline font-extralight hover:font-semibold hover:scale-110 duration-300">{list.name}</a>
                                 </li>
                             </div>

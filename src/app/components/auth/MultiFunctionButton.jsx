@@ -38,7 +38,7 @@ export async function NavButton() {
             }}
           >
             <button type="submit" className="inline-flex items-center justify-between rounded-full text-xs font-medium py-1 px-2">
-                <img src={session.user.image} className="rounded-full h-8 w-8 mr-2" />
+                <img src={session.user.image} alt="avatar" className="rounded-full h-8 w-8 mr-2" />
                 <div className="flex flex-col p-1">
                     <p className="flex-row flex hover:font-semibold ">Sign Out</p>
                 </div>
