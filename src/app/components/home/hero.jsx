@@ -75,7 +75,7 @@ import { signIn } from "next-auth/react";
             onClick={()=> signIn('spotify', {redirectTo: "/dashboard/range_short"})}
           >
             Try It Now
-            <Image src={Arrow} className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
+            <Image src={Arrow} alt={"arrow"} className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
           </motion.button>
         </div>
   

@@ -9,6 +9,7 @@ import ScreenShot from "../../public/images/Screenshot 2024-08-27 132902.png"
 export default function Home() {
 
 
+
   const cards = [
     {
       header: 'Top Artists',
@@ -35,7 +36,7 @@ export default function Home() {
         <h2 className="text-6xl pb-32 font-bold">Get Your Top 8</h2>
         <div className="flex flex-wrap justify-center gap-4"> 
         {cards.map((card) =>(
-          <Card  prop={card} />
+          <Card  key={card.id} prop={card} />
         ))
       }
       </div>
