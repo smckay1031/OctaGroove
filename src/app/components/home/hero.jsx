@@ -24,7 +24,7 @@ import { signIn } from "next-auth/react";
         repeat: Infinity,
         repeatType: "mirror",
       });
-    }, []);
+    }, [color]);
 
     const ref = useRef(null)
     const {scrollYProgress} = useScroll(ref)
