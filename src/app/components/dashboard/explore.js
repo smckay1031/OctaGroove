@@ -33,7 +33,7 @@ function Recents(){
                             <div className="h-24 w-24 overflow-hidden relative hover:scale-110 duration-500"> 
                                 <img src={item.track.album.images[1].url} className="h-24 w-24 rounded-2xl border border-[#00000040]" /> 
                                 <div className="absolute top-0 scale-50 opacity-0 left-0 rounded-2xl w-24 h-24 bg-[#00000040] backdrop-blur-sm border border-[#ffffff35] flex flex-col justify-center items-center translate-y-0 duration-500 p-0.5 cursor-pointer z-50 hover:opacity-100 hover:scale-100">
-                                    <a href={item.track.uri} target="_blank" className=" font-bold leading-none hover:underline mb-0.5 max-h-12 overflow-ellipsis">{item.track.name}</a>
+                                    <a href={item.track.uri} target="_blank" className=" font-bold leading-none hover:underline mb-0.5 max-h-12 overflow-hidden">{item.track.name}</a>
                                     <a className="text-xs font-extralight leading-none">{Artists(item)}</a>
                                 </div>
                             </div>
