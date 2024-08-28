@@ -42,7 +42,7 @@ async function TopTracks(range) {
         return(
             <div className=" flex flex-col font-Inter h-full" id="topTracks">
             <h2 className="text-3xl font-bold text-center pb-4"> Top Tracks</h2>
-            <div className="bg-[#00000040] rounded-2xl backdrop-blur border-[#ffffff27] border py-5">
+            <div className="bg-[#00000040] rounded-2xl backdrop-blur border-[#ffffff27] border py-2">
                 <div className="flex justify-around text-xs text-center font-semibold">
                     <h3 className="w-4/12"> Artist/Song</h3>
                     <h3 className="w-2/5 pl-10"> Album</h3>
@@ -51,7 +51,7 @@ async function TopTracks(range) {
                 <ul className="p-1 overflow-y-scroll">
                     {tracks.items.map((item) =>(
                         <div className="pl-4">
-                            <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5">
+                            <li key={item.id} className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5 min-h-10">
                                 <div className="flex justify-between items-center">
                                     <div className="flex w-5/12 items-center">
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />

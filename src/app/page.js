@@ -41,14 +41,14 @@ export default function Home() {
       </div>
       </section>
       <article className="flex flex-col items-center justify-center py-64 lg:px-64 px-10 " >
-        <h3 className="text-6xl pb-16 font-bold">About</h3>
-        <div className="flex flex-wrap items-center justify-center gap-10">
+        <h3 className="text-6xl pb-8 font-bold">About</h3>
+        <div className="flex flex-wrap items-center justify-center w-full">
+          <p className=" w-1/2 flex-grow pt-20 px-5"> <span className="font-bold text-lg">OctaGroove</span> is an online dashboard designed to be used with your Spotify app to enhance your listening experience. You'll have an <span className="font-bold text-lg">enhanced UI experience</span> that allows you to view your top eight items. <span className="font-bold text-lg">Your data is never stored on our servers and is never shared with anyone.</span> Simply sign in to your Spotify account to get started.</p>
           <Image
           src={ScreenShot}
-          height={200} 
+          width={350}
           className=" rounded-2xl pt-24"
           />
-          <p className=" h-min pt-16"> OctaGroove is an online dashboard designed to be used with your Spotify app to enhance your listening experience. You'll have an <span className="font-bold text-lg">enhanced UI experience</span> that allows you to view your top eight items. <span className="font-bold text-lg">Your data is never stored on our servers and is never shared with anyone.</span> Simply sign in to your Spotify account to get started.</p>
         </div>
       </article>
     </main>

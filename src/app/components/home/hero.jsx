@@ -46,7 +46,7 @@ import { signIn } from "next-auth/react";
         }}
         viewport={{margin: '-400px'}}
         ref={ref}
-        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200 z-0 sticky top-0"
+        className="grid min-h-screen place-content-center overflow-hidden bg-[#000000] px-4 py-24 text-gray-200 z-0 sticky top-0 rounded-2xl"
       >
         <div className="relative z-10 flex flex-col items-center">
           <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">

@@ -8,8 +8,7 @@ export default function Footer() {
             <div className="flex justify-between items-end px-5">
                 <p className=""> Created By Sean McKay</p>
                 <div className="flex flex-col items-center justify-center pb-2">
-                    <p>Socials</p>
-                    <a href="">
+                    <a href="https://github.com/smckay1031/OctaGroove" target="_blank">
                     <Image
                     src={Github}
                     alt="Github"
