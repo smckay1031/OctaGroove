@@ -19,11 +19,10 @@ export async function NavButton() {
               <Image
                 src={AccountIcon} 
                 alt="account"
-                width={28}
-                height={28}
-                className="mr-2"
+                width={32}
+                height={32}
               />
-              <p className="p-1 hover:font-semibold">Sign In</p>
+              <p className="p-1 hover:font-semibold hover:scale-110">Sign In</p>
               </button>
           </form>
         )

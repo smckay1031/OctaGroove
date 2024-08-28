@@ -7,11 +7,11 @@ import { Button } from "../components/auth/loginButton"
 export default function Login() {
     return (
     <>
-        <div className="flex items-center justify-center w-full h-screen  top-0">
+        <div className="flex items-center justify-center w-full h-screen top-0">
             <div id="absoluteBottom"> <a className="opacity-0"> a</a></div>
-            <div className="bg-[#00000035] backdrop-blur-lg p-14 z-30 rounded-3xl border-[#ffffff27] border h-96 max-w-xl flex justify-center items-center flex-col">
-                <h1 className="text-5xl font-Monoton text-center my-10 opacity-95">OctaGroove</h1>
-                <h2 className="my-5 font-semibold opacity-95 text-lg"> Sign In</h2>
+            <div className="bg-[#00000035] backdrop-blur-lg p-14 z-30 rounded-3xl border-[#ffffff27] border max-w-xl flex justify-center items-center flex-col">
+                <h1 className="lg:text-5xl text-3xl font-Monoton text-center my-10 opacity-95">OctaGroove</h1>
+                <h2 className="my-5 font-semibold opacity-95 lg:text-lg"> Sign In</h2>
                 <div className="flex-col items-center justify-center text-center">
                     <Button />
                 </div>

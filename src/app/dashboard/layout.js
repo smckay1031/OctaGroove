@@ -6,7 +6,7 @@ import { CurrentlyPlaying} from "../components/dashboard/nowPlaying"
 export default function DashboardLayout( {children}) {
 
         return (
-            <div className="flex mt-20 py-5 font-Inter" id="dashboardLayout">
+            <div className="flex mt-20 py-5 font-Inter overflow-hidden" id="dashboardLayout">
                 <SideBar />
                 <div>
                     <section className="max-w-full"> {children}</section>
