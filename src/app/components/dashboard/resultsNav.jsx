@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import clock from "../../../../public/images/icon _clock_.svg"
+import clock from "../../../../public/images/icon _clock_ black.svg"
 import { usePathname } from "next/navigation"
 
 
@@ -22,7 +22,7 @@ export default function ResultsNav({props}) {
             width={28}
             height={28}
             />
-            <h3 className="font-bold text-xl text-center pb-2 ml-1"
+            <h3 className="font-bold text-xl pb-2 ml-1 w-full"
             >Results</h3>
         </div>
        <ul className=" font-normal list-disc pl-5">
@@ -31,7 +31,7 @@ export default function ResultsNav({props}) {
             const isActive = pathname === prop.link; 
                  return ( 
                     <li key={`${prop.text}`}>
-                        <Link href={prop.link} className={isActive ? ' underline font-bold text-lg': 'font-light hover:font-bold duration-200'}>{prop.text}</Link>
+                            <Link href={prop.link} className={isActive ? ' underline font-bold text-lg text-[#18D860]': 'font-light hover:font-bold duration-200'}>{prop.text}</Link>
                 </li>
         )})}       
        </ul>

@@ -51,7 +51,7 @@ export default async function SideBar() {
             <aside className="ml-2 font-Inter flex-col z-10 lg:flex hidden" id="sidebar">
             <ResultsNav props={results} />
             <div className="mt-2 py-5 px-1 rounded-xl bg-[#00000080] border border-[#ffffff27] backdrop-blur-md overflow-y-scroll" id="playlistSidebar">
-                <div className="flex items-center justify-center pb-2">  
+                <div className="flex items-center pb-2 pl-6 w-full">  
                     <Image 
                     src={list}
                     alt="list_icon"
@@ -65,7 +65,7 @@ export default async function SideBar() {
                         {playlists.items.map((list) =>(
                             <div key={list.id} className="text-sm leading-none py-0.5 pl-5 my-0.5">
                                 <li className="capitalize">
-                                    <a href={list.uri} target="_blank" className=" no-underline font-extralight hover:font-semibold hover:scale-110 duration-300">{list.name}</a>
+                                    <a href={list.uri} target="_blank" className=" no-underline font-extralight hover:font-semibold hover:scale-110 hover:text-[#18D860] duration-300">{list.name}</a>
                                 </li>
                             </div>
                         ))}
