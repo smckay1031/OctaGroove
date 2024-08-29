@@ -1,5 +1,5 @@
 'use client'
-import { useState, Suspense} from "react"
+import { useState} from "react"
 import useSWR from "swr";
 import fetcher from "../../../../lib/fetcher";
 import Loading from "../UI/loading"
@@ -29,7 +29,7 @@ function Recents(){
             <div id="recents" className="overflow-y-scroll h-80 py-2 rounded-2xl">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.items.map((item)=>(
-                        <li key={item.track.id} className=" text-xs mt-1">
+                        <li key={Math.random()*100} className=" text-xs mt-1">
                             <div className="h-24 w-24 overflow-hidden relative hover:scale-110 duration-500"> 
                                 <img src={item.track.album.images[1].url} className="h-24 w-24 rounded-2xl border border-[#00000040]" /> 
                                 <div className="absolute top-0 scale-50 opacity-0 left-0 rounded-2xl w-24 h-24 bg-[#00000040] backdrop-blur-sm border border-[#ffffff35] flex flex-col justify-center items-center translate-y-0 duration-500 p-0.5 cursor-pointer z-50 hover:opacity-100 hover:scale-100">

@@ -36,6 +36,7 @@ body {
 #topArtists, #topTracks {
   line-height: 0.5rem;
   flex-grow: inherit;
+  z-index: 5;
 }
 
 #sidebar {
@@ -77,7 +78,6 @@ line-height: 0.5rem;
   }
   #topArtist {
     line-height: 0px;
-
   }
 }
 
