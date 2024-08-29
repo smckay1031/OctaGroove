@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import clock from "../../../../public/images/icon _clock_ black.svg"
+import clock from "../../../../public/images/icon _clock_.svg"
 import { usePathname } from "next/navigation"
 
 
@@ -14,7 +14,7 @@ export default function ResultsNav({props}) {
     const pathname = usePathname();
 
     return(
-        <div className="p-5 rounded-2xl bg-[#00000080] border border-[#ffffff27] backdrop-blur-md">
+        <div className="p-5 rounded-2xl bg-[#00000080] border border-[#18d8625e] backdrop-blur-md shadow-2xl shadow-[#18d86223] ">
         <div className="flex items-center justify-center">
             <Image 
             src={clock}

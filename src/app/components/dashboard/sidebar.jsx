@@ -50,15 +50,15 @@ export default async function SideBar() {
         return(
             <aside className="ml-2 font-Inter flex-col z-10 lg:flex hidden" id="sidebar">
             <ResultsNav props={results} />
-            <div className="mt-2 py-5 px-1 rounded-xl bg-[#00000080] border border-[#ffffff27] backdrop-blur-md overflow-y-scroll" id="playlistSidebar">
+            <div className="mt-2 py-5 px-1 rounded-xl bg-[#00000080] border border-[#18d8625e]  backdrop-blur-md overflow-y-scroll shadow-2xl shadow-[#18d86223] " id="playlistSidebar">
                 <div className="flex items-center pb-2 pl-6 w-full">  
                     <Image 
                     src={list}
                     alt="list_icon"
-                    width={16}
-                    height={16}
+                    width={20}
+                    height={20}
                     />
-                    <h4 className="font-bold text-lg ml-2"> PLaylists</h4>
+                    <h4 className="font-bold text-xl ml-2"> PLaylists</h4>
                 </div>
                 <div className="p-1">
                     <ul className=" overflow-y-scroll">

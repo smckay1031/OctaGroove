@@ -3,7 +3,7 @@
 import Image from "next/image";
 import NavOn from "../../../../public/images/Align-justified.svg";
 import Close from "../../../../public/images/Close.svg";
-import Clock from "../../../../public/images/icon _clock_ black.svg";
+import Clock from "../../../../public/images/icon _clock_.svg";
 import { useState, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
