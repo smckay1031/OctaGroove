@@ -41,7 +41,7 @@ async function TopTracks(range) {
         return(
             <div className=" flex flex-col font-Inter h-full" id="topTracks">
             <h2 className="text-3xl font-bold text-center pb-4"> Top Tracks</h2>
-            <div className="bg-[#00000040] rounded-2xl backdrop-blur border-[#ffffff27] border py-2">
+            <div className="bg-[#00000040] rounded-2xl backdrop-blur border-[#ffffff27] border py-4">
                 <div className="flex justify-around text-xs text-center font-semibold">
                     <h3 className="w-4/12"> Artist/Song</h3>
                     <h3 className="w-2/5 pl-10"> Album</h3>

@@ -4,8 +4,8 @@ import Image from "next/image";
 import NavOn from "../../../../public/images/Align-justified.svg";
 import Close from "../../../../public/images/Close.svg";
 import Clock from "../../../../public/images/icon _clock_ black.svg";
-import { useState, useEffect, use } from "react";
-import { delay, motion, useAnimationControls } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
