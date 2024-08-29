@@ -28,8 +28,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
-  animation-name: fadeIn;
-  animation-duration: 1.2s;
 }
 
 
@@ -37,6 +35,8 @@ body {
   line-height: 0.5rem;
   flex-grow: inherit;
   z-index: 5;
+  animation-name: fadeIn;
+  animation-duration:0.3s ;
 }
 
 #sidebar {
