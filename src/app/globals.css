@@ -34,7 +34,7 @@ body {
 #topArtists, #topTracks {
   line-height: 0.5rem;
   flex-grow: inherit;
-  z-index: 5;
+  z-index: 10;
   animation-name: fadeIn;
   animation-duration:0.3s ;
 }
@@ -78,6 +78,11 @@ line-height: 0.5rem;
   }
   #topArtist {
     line-height: 0px;
+    width: 100%;
+    
+  }
+  #exploreCard {
+    width: 100%;
   }
 }
 
@@ -87,8 +92,8 @@ position: absolute;
 animation-name: colorChange;
 animation-duration: 30s;
 animation-iteration-count: infinite;
- bottom:0%;
- right: -100px;
+ bottom:25%;
+ right: -25%;
  width: 80%;
  height: 45%;
  border-radius: 80%;
