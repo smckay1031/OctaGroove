@@ -50,7 +50,7 @@ async function TopTracks(range) {
                 <ul className="p-1 overflow-y-scroll">
                     {tracks.items.map((item) =>(
                         <div className="pl-4" key={item.id}>
-                            <li className="list-decimal list-outisde my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5 min-h-10">
+                            <li className="list-decimal list-outside my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black backdrop-blur border-[#ffffff27] border-0.5 py-0.5 min-h-10">
                                 <div className="flex justify-between items-center">
                                     <div className="flex lg:w-5/12 w-40 items-center">
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />

@@ -85,7 +85,7 @@ export default function MobileNav() {
 
   return (
     <div className="fixed top-16 z-40 w-full px-1 lg:hidden">
-      <button onClick={() => toggleNav()} className="fixed -top-3 left-3 p-2">
+      <button onClick={() => toggleNav()} className="fixed -top-5 left-3 p-2">
         {!active && <Image src={NavOn} alt="nav" height={28} width={28} />}
         {active && (
           <Image
