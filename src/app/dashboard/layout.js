@@ -12,7 +12,7 @@ export default function DashboardLayout( {children}) {
                 <MobileNav />
                 <div>
                     <section className="z-20"> {children}</section>
-                    <div className="flex items-end gap-2 pr-4">
+                    <div className="flex items-end gap-2 lg:pr-4">
                     <ExploreCard />
                     <CurrentlyPlaying />
                     <div id="absoluteBottom"> <a className="opacity-0"> a</a></div>
