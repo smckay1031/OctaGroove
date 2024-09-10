@@ -7,7 +7,7 @@ import MobileNav from "../components/nav/mobileNav"
 export default function DashboardLayout( {children}) {
 
         return (
-            <div className="flex mt-20 py-5 font-Inter relative max-w-full" id="dashboardLayout">
+            <div className="flex mt-20 py-5 font-Inter max-w-full" id="dashboardLayout">
                 <SideBar />
                 <MobileNav />
                 <div>
@@ -15,7 +15,6 @@ export default function DashboardLayout( {children}) {
                     <div className="flex items-end gap-2 lg:pr-4 mt-5">
                     <ExploreCard />
                     <CurrentlyPlaying />
-                    <div id="absoluteBottom"> <a className="opacity-0"> a</a></div>
                     </div>
                 </div>
             </div>
