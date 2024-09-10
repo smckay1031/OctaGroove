@@ -7,7 +7,7 @@ import MobileNav from "../components/nav/mobileNav"
 export default function DashboardLayout( {children}) {
 
         return (
-            <div className="flex mt-20 py-5 font-Inter overflow-hidden relative max-w-full" id="dashboardLayout">
+            <div className="flex mt-20 py-5 font-Inter relative max-w-full" id="dashboardLayout">
                 <SideBar />
                 <MobileNav />
                 <div>
