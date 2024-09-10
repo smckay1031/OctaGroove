@@ -52,15 +52,15 @@ async function TopTracks(range) {
                         <div className="" key={item.id}>
                             <li className=" my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black border-[#ffffff27] border-0.5 pt-0.5 pb-2 min-h-10">
                                 <div className="flex justify-between items-center">
-                                    <div className="flex md:w-5/12 w-40 items-center">
+                                    <div className="flex w-5/12 items-center">
                                         <p className="p-1 font-semibold md:text-base text-sm">{`${index + 1}.`}</p>
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
-                                        <div className="h-8">
-                                            <a  href={item.uri} className="font-light text-base leading-none hover:underline hover:font-semibold duration-500"><p className="block h-5 overflow-hidden pt-0.5 leading-4">{item.name}</p></a>
-                                            <p className="h-4 mt-0.5 overflow-hidden font-light leading-4">{Artists(item)}</p>
+                                        <div className="h-9 flex flex-col">
+                                            <a  href={item.uri} className=" h-4 font-normal md:text-base text-sm leading-none hover:underline hover:font-semibold duration-500"><p className="block h-5 overflow-clip pt-0.5 leading-5">{item.name}</p></a>
+                                            <p className="h-4 mt-1 overflow-hidden font-light leading-4">{Artists(item)}</p>
                                         </div>
                                     </div>
-                                    <p className="lg:w-60 w-20 mx-2 flex flex-grow justify-center overflow-hidden max-h-8 font-normal text-sm leading-4">{item.album.name}</p>
+                                    <p className="mx-2 w-64 text-center justify-center overflow-hidden max-h-8 font-normal text-sm leading-4">{item.album.name}</p>
                                     <p className="h-full flex items-center pr-1 text-base font-normal"> {getDuration(item.duration_ms)}</p>
                                 </div>
                             </li>
