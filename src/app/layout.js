@@ -30,7 +30,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body className="min-h-screen min-w-full">
+      <body className="min-h-screen max-w-full overflow-x-hidden">
         <NavBar />
         <main>
           {children}
