@@ -20,7 +20,7 @@ async function GetTopArtist(range) {
         return (
             <div className=" font-Inter flex flex-col items-center justify-center md:mt-0 mt-5" id="topArtists">
                 <h2 className="text-3xl font-bold pb-4"> Top Artists</h2>
-                <ul className="grid grid-cols-4 lg:gap-2 items-center justify-center rounded-2xl backdrop-blur w-full border-[#ffffff27] border bg-[#00000040] lg:px-8 px-4 lg:py-8 py-16" >
+                <ul className="grid grid-cols-4 lg:gap-2 items-center justify-center rounded-2xl w-full border-[#ffffff27] border bg-[#00000040] lg:px-8 px-4 lg:py-8 py-16" >
                     {artists.items.map((item, index) =>(
                     <li key={item.id} className=" h-full w-full flex flex-col items-center justify-center font-bold text-sm mx-2 hover:scale-110 duration-300 mb-4">
                     <a href={item.uri}>
