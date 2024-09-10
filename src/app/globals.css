@@ -64,7 +64,7 @@ width: 400px;
 border-radius: 0.75rem;
 box-shadow: 5px 5px 10px rgb(0, 0, 0);
 background-color: rgba(0, 0, 0, 0.8);
-z-index: 2;
+z-index: 10;
 line-height: 0.5rem;
 }
 
@@ -99,7 +99,7 @@ animation-iteration-count: infinite;
  width: 80%;
  height: 45%;
  border-radius: 80%;
- z-index: -1;
+ z-index: 0;
  filter:blur(10rem);
 }
 
