@@ -56,8 +56,8 @@ async function TopTracks(range) {
                                         <p className="p-1 font-semibold md:text-base text-sm">{`${index + 1}.`}</p>
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
                                         <div className="h-9 flex flex-col">
-                                            <a  href={item.uri} className=" h-4 font-normal md:text-base text-sm leading-none hover:underline hover:font-semibold duration-500"><p className="block h-4 overflow-clip py-0.5 leading-4">{item.name}</p></a>
-                                            <p className="h-4 mt-1 overflow-hidden font-light leading-4">{Artists(item)}</p>
+                                            <a  href={item.uri} className=" h-6 font-normal text-sm md:text-base hover:underline hover:font-semibold duration-500"><p className="block h-6 overflow-clip py-0.5">{item.name}</p></a>
+                                            <p className="h-3 overflow-hidden font-light leading-4">{Artists(item)}</p>
                                         </div>
                                     </div>
                                     <p className="md:w-4/12 w-1/4 md:text-center justify-center overflow-hidden max-h-8 font-normal text-sm leading-4">{item.album.name}</p>
