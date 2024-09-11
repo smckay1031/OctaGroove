@@ -20,12 +20,14 @@ async function GetTopArtist(range) {
         return (
             <div className=" font-Inter flex flex-col items-center justify-center md:mt-0 mt-5" id="topArtists">
                 <h2 className="text-3xl font-bold pb-4"> Top Artists</h2>
-                <ul className="grid grid-cols-4 lg:gap-2 items-center justify-center rounded-2xl w-full border-[#ffffff27] border bg-[#00000040] lg:px-8 px-4 lg:py-8 py-16" >
+                <ul className=" grid grid-cols-4 lg:gap-2 gap-1 items-center justify-center rounded-2xl w-full border-[#ffffff27] border bg-[#00000040] lg:px-8 px-4 lg:py-14 py-14" >
                     {artists.items.map((item, index) =>(
-                    <li key={item.id} className=" h-full w-full flex flex-col items-center justify-center font-bold text-sm mx-2 hover:scale-110 duration-300 mb-4">
+                    <li key={item.id} className="w-full h-full flex flex-col font-bold text-sm hover:scale-110 duration-300 mb-4">
                     <a href={item.uri}>
-                        <img className="object-cover lg:h-28 lg:w-28 h-20 w-20 mb-2 rounded-2xl justify-center items-center" src={item.images[1].url} alt="top_artist" />
-                        <p className="text-sm leading-none font-normal pr-1 h-8 w-16 hover:underline">{item.name}</p>
+                        <img className="object-cover lg:h-32 lg:w-32 sm:h-24 sm:w-24 h-20 w-20 mb-2 rounded-2xl justify-center items-center" src={item.images[1].url} alt="top_artist" />
+                        <div className="flex lg:w-32 sm:w-24 w-20">
+                            <p className="lg:text-base text-xs md:font-semibold font-normal leading-none hover:underline">{index +1}.  {item.name}</p>
+                        </div>
                     </a>    
                     </li>
                     ))}

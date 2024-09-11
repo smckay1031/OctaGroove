@@ -32,8 +32,8 @@ body {
 
 
 #topArtists, #topTracks {
-  line-height: 2rem;
   flex-grow: inherit;
+  line-height: 0px;
   z-index: 10;
   animation-name: fadeIn;
   animation-duration:0.3s ;
