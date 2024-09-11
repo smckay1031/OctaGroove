@@ -50,14 +50,14 @@ async function TopTracks(range) {
                 <ol className="p-1">
                     {tracks.items.map((item, index) =>(
                         <div className="" key={item.id}>
-                            <li className=" my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black border-[#ffffff27] border-0.5 pt-0.5 pb-2 min-h-10">
+                            <li className=" my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black border-[#ffffff27] border-0.5 py-1 min-h-10">
                                 <div className="flex justify-between items-center">
                                     <div className="flex md:w-2/5 w-3/5 items-center">
                                         <p className="p-1 font-semibold md:text-base text-sm">{`${index + 1}.`}</p>
                                         <img src={item.album.images[2].url} alt="album" className="w-6 h-6 mx-1 rounded-md" />
                                         <div className="h-9 flex flex-col">
-                                            <a  href={item.uri} className=" h-6 font-normal text-sm md:text-base hover:underline hover:font-semibold duration-500"><p className="block h-6 overflow-clip py-0.5">{item.name}</p></a>
-                                            <p className="h-3 overflow-hidden font-light leading-4">{Artists(item)}</p>
+                                            <a  href={item.uri} className=" h-6 font-normal text-sm md:text-base hover:underline hover:font-semibold duration-500"><p className="block h-6 overflow-clip">{item.name}</p></a>
+                                            <p className="h-3 font-light leading-4">{Artists(item)}</p>
                                         </div>
                                     </div>
                                     <p className="md:w-4/12 w-1/4 md:text-center justify-center overflow-hidden max-h-8 font-normal text-sm leading-4">{item.album.name}</p>
