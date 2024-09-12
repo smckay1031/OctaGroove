@@ -26,7 +26,7 @@ function Recents(){
         }
 
         return (
-            <div id="recents" className="overflow-y-scroll h-80 p-2 rounded-2xl">
+            <div id="recents" className="overflow-y-scroll h-80 py-2 px-1 rounded-2xl">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.items.map((item, index)=>(
                         <li key={index} className=" text-xs mt-1">
@@ -65,7 +65,7 @@ function Reccomend() {
         }
 
         return (
-            <div id="recents" className=" overflow-y-scroll h-80 p-2">
+            <div id="recents" className=" overflow-y-scroll h-80 py-2 px-1">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.tracks.map((item)=>(
                         <li key={item.id} className=" text-xs">
