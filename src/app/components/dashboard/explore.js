@@ -65,7 +65,7 @@ function Reccomend() {
         }
 
         return (
-            <div id="recents" className=" overflow-y-scroll h-80">
+            <div id="recents" className=" overflow-y-scroll h-80 p-2">
                 <ul className="capitalize leading-none flex flex-wrap justify-center items-center gap-1">
                     {data.tracks.map((item)=>(
                         <li key={item.id} className=" text-xs">
