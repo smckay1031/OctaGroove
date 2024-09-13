@@ -4,7 +4,7 @@ import { auth } from "../../../../auth"
 export async function GET() {
     const session = await auth()
     const token = session.user.access_token; 
-    let range = 'short'
+    const range = 'short';
 
     const response = await fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=0&time_range=${range}_term`,{
         headers: {
@@ -12,16 +12,33 @@ export async function GET() {
         }
     })
 
+
+
     const data = await response.json();
      
-    const genres = data.items.map((artist) =>{
-        
-    
-    const genreList = artist.genres.map((genre)=> genre);
+    function topGenres(data) {
+        let genreSort = [];
+        let genreTotal = [];
 
-    return genreList
-    })
-    
-    return Response.json(genres);
+        const genres = data.items.map((artist) =>{
+            const sort = artist.genres.map((arr)=> {
+                if(!genreSort.includes(arr)){ 
+                    genreSort.push(arr);
+                    genreTotal.push(arr)
+                    } else{
+                        return genreTotal.push(arr)
+                    }
+                })
+            return sort
+            })
+
+        genres
+        const listSorted = genreSort.flat()
+
+        return listSorted
+            
+        }
+        
+    return Response.json(topGenres(data));
 
 }
