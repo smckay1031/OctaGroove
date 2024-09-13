@@ -15,15 +15,20 @@ export async function GET() {
 
 
     const data = await response.json();
-     
-    function topGenres(data) {
-        let genreSort = [];
-        let genreTotal = [];
 
+    function topGenres(data) {
+        let genreShort = [];
+        let genreTotal = [];
+        class GenreData {
+            constructor(name, count) {
+                this.name = name
+                this.count = count 
+            }
+        }
         const genres = data.items.map((artist) =>{
             const sort = artist.genres.map((arr)=> {
-                if(!genreSort.includes(arr)){ 
-                    genreSort.push(arr);
+                if(!genreShort.includes(arr)){ 
+                    genreShort.push(arr);
                     genreTotal.push(arr)
                     } else{
                         return genreTotal.push(arr)
@@ -33,10 +38,20 @@ export async function GET() {
             })
 
         genres
-        const listSorted = genreSort.flat()
+        const newShort = genreShort.flat()
+        const newTotal = genreTotal.flat();
 
-        return listSorted
-            
+        function makeGenreData(arr1, arr2){
+            let data = []
+            const count = arr1.forEach((genre) => {
+
+                const countArr = arr2.filter((item)=> genre === item)
+                console.log(countArr)
+            });
+            return count
+        }
+        makeGenreData(newShort, newTotal)
+        return newShort.sort()
         }
         
     return Response.json(topGenres(data));
