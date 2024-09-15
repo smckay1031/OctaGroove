@@ -7,7 +7,7 @@ export async function GET() {
     
     const offset = Math.floor(Math.random() *25)
 
-    const seedResponse =  await fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&offset=${offset}&time_range=short_term`,{
+    const seedResponse =  await fetch(`https://api.spotify.com/v1/me/top/artists?limit=5&offset=${offset}&time_range=short_term`,{
         headers: {
             'Authorization': 'Bearer ' + token
         }
@@ -23,7 +23,7 @@ export async function GET() {
 
     const seedList = getIDs(seed).join(',')
 
-    const reccomend = await fetch(`https://api.spotify.com/v1/recommendations?limit=30&seed_tracks=${seedList}`, {
+    const reccomend = await fetch(`https://api.spotify.com/v1/recommendations?limit=34&seed_artists=${seedList}`, {
         headers: {
             'Authorization': 'Bearer ' + token
         }
