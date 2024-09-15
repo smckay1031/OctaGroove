@@ -56,7 +56,7 @@ export async function GET() {
             const getCount = arr1.forEach((genre) => {
                 const counter = arr2.filter((item)=> genre === item)
                 const count = counter.length
-                const stringObject = `{"name": "${genre}", "count": "${count}"}`
+                const stringObject = `{"name": "${genre}", "count": ${count}}`
                 return genreObject.push(stringObject)
             });
             getCount//run this f(x)
