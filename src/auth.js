@@ -83,7 +83,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       session.user.image = token.userImage;
       session.user.access_token = token.access_token;
       session.user.refresh_token = token.refresh_token;
-      console.log(session.user.refresh_token)
       return session 
     }
   },
