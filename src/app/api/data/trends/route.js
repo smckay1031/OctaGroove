@@ -21,13 +21,6 @@ export async function GET() {
         let genreShort = [];
         let genreTotal = [];
 
-
-        class Data {
-            constructor(name, count) {
-                this.genre = name;
-                this.count = count;
-            }
-        }
         //We are creating two array lists: one with and one without repeats of our top artists genres
         const genres = data.items.map((artist) =>{
             const sort = artist.genres.map((arr)=> {
@@ -56,19 +49,19 @@ export async function GET() {
             const getCount = arr1.forEach((genre) => {
                 const counter = arr2.filter((item)=> genre === item)
                 const count = counter.length
-                const stringObject = `{"name": "${genre}", "count": ${count}}`
+                const stringObject = `{"name": "${genre}", "value": ${count}}`//Count key is labeled value because of recharts
                 return genreObject.push(stringObject)
             });
-            getCount//run prev f(x) to generate array of gen
+            getCount//run prev f(x) to generate array of genres and their count of repeats.
             const objectInsert = genreObject.join(', ')
             const jsonString = `{"genres": [`+ `${objectInsert}`+ "]}"
-            const GenereData = JSON.parse(jsonString)
-            return GenereData
-                 
+            const GenreData = JSON.parse(jsonString)
+            const sortedData = GenreData.genres.sort((a, b)=> b.value - a.value )//Sorting by highest to lowest count returing an array of objects
+            const firstEight = sortedData.filter((item) => sortedData.indexOf(item) < 8)//Just returning the first eight 
+            return firstEight
             }
-
-        return makeGenreData(newShort, newTotal)
-    }
+            return makeGenreData(newShort, newTotal)
+        }
            
     return Response.json(topGenres(data));
 }

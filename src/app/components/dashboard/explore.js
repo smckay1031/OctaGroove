@@ -91,6 +91,7 @@ export default function ExploreCard() {
     const [toggle, setToggle] = useState('recents');
     const recentActive = toggle === 'recents'
     const reccomendAvtive = toggle == 'reccomend'
+    const trendsActive = toggle == 'trends'
     
     return (
         <div id="exploreCard" className="rounded-2xl font-Inter text-center">
@@ -100,6 +101,8 @@ export default function ExploreCard() {
                 <div className="inline-flex gap-1 pb-4"> 
                     <button onClick={()=> setToggle('recents')} id="recents" className={recentActive? 'font-bold underline' : 'hover:font-extralight duration-200'}>Recents</button>
                     <button onClick={()=> setToggle('reccomend')} id="reccomend" className={reccomendAvtive? 'font-semibold underline' : 'hover:font-extralight duration-200'}>Reccomended</button>
+                    <button onClick={()=> setToggle('trends')} id="recents" className={trendsActive? 'font-bold underline' : 'hover:font-extralight duration-200'}>Trends</button>
+
             </div >
                 <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-6 flex items-center justify-center">
                         { toggle === "recents" && <Recents />}
