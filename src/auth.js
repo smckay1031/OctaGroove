@@ -1,3 +1,5 @@
+/* This Code is also almost identical to that of the auth.js reccomneded refresh rotation from their documentation form https://authjs.dev/guides/refresh-token-rotation
+You can click on the link to read more.  */
 
 import NextAuth from "next-auth";
 import Spotify from "next-auth/providers/spotify";
@@ -5,7 +7,7 @@ import authURL from "../lib/spotify";
 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  debug: true,
+  debug: false,
   pages: {
     signIn: "/login",
   },
@@ -44,15 +46,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         try {
 
           const response = await fetch(
-            "https://accounts.spotify.com/api/token",
-            {
+            "https://accounts.spotify.com/api/token",{
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: new URLSearchParams({
                 grant_type: "refresh_token",
-                refresh_token: `${token.refresh_token}`,
-                client_id: `${process.env.AUTH_SPOTIFY_ID}`,
-                client_secret: `${process.env.AUTH_SPOTIFY_SECRET}`,
+                refresh_token: `${token.refresh_token}`, //Used `${}` expression to guarentee a string is passed for
+                client_id: `${process.env.AUTH_SPOTIFY_ID}`, //As above because I don't know typescript
+                client_secret: `${process.env.AUTH_SPOTIFY_SECRET}`,//Syntax like above prevents type error revoking refresh token
               }),
             });
 
