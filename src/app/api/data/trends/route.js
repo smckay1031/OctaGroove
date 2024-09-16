@@ -59,7 +59,7 @@ export async function GET() {
                 const stringObject = `{"name": "${genre}", "count": ${count}}`
                 return genreObject.push(stringObject)
             });
-            getCount//run this f(x)
+            getCount//run prev f(x) to generate array of gen
             const objectInsert = genreObject.join(', ')
             const jsonString = `{"genres": [`+ `${objectInsert}`+ "]}"
             const GenereData = JSON.parse(jsonString)
