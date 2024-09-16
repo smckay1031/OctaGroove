@@ -23,7 +23,7 @@ export async function GET() {
 
     const seedList = getIDs(seed).join(',')
 
-    const reccomend = await fetch(`https://api.spotify.com/v1/recommendations?limit=34&seed_artists=${seedList}`, {
+    const reccomend = await fetch(`https://api.spotify.com/v1/recommendations?limit=50&seed_artists=${seedList}`, {
         headers: {
             'Authorization': 'Bearer ' + token
         }
