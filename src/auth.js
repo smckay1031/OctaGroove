@@ -50,10 +50,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: new URLSearchParams({
-                grant_type: "refresh_token",
-                refresh_token: `${token.refresh_token}`, //Used `${}` expression to guarentee a string is passed for
-                client_id: `${process.env.AUTH_SPOTIFY_ID}`, //As above because I don't know typescript
-                client_secret: `${process.env.AUTH_SPOTIFY_SECRET}`,//Syntax like above prevents type error revoking refresh token
+                "grant_type": "refresh_token",
+                "refresh_token": `${token.refresh_token}`, //Used `${}` expression to guarentee a string is passed for
+                "client_id": `${process.env.AUTH_SPOTIFY_ID}`, //As above because I don't know typescript
+                "client_secret": `${process.env.AUTH_SPOTIFY_SECRET}`,//Syntax like above prevents type error revoking refresh token
               }),
             });
 
