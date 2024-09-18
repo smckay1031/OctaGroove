@@ -77,7 +77,7 @@ export default function MobileNav() {
       containerControls.start("close");
       listControls.start("before");
     }
-  }, [active]);
+  }, [active, containerControls, listControls]);
   //button toggle changes state
   function toggleNav() {
     setActive((active) => !active);

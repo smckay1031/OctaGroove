@@ -42,7 +42,9 @@ export async function GET() {
             newShort is a short array of the genres our top artists are associated with,
             newTotal is an array with repeats of all of the genres our topArtists are associated with.
             We are counting the number repeats a genre has to see how popular it is. then it will be converted into string-->json for API to display;
-            Recharts needs this json data this way for our trends graph. */
+            Recharts needs this json data this way for our trends graph. 
+            *** Maps are not used in this instance*** because more than one key value is needed
+            for the json. Instead the values are hashed out into a string and then parsed to json so the api can read it in proper json format*/
 
         function makeGenreData(arr1, arr2){
             const genreObject = [];
