@@ -3,7 +3,7 @@ import { useState } from "react"
 import useSWR from "swr";
 import fetcher from "../../../../lib/fetcher";
 import Loading from "../UI/loading"
-
+import Trends from "../../components/dashboard/trends"
 
 function Recents(){
 
@@ -107,6 +107,7 @@ export default function ExploreCard() {
                 <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-6 flex items-center justify-center">
                         { toggle === "recents" && <Recents />}
                         { toggle ==="reccomend" && <Reccomend />}
+                        { toggle === "trends" && <Trends />}
                 </div>
             </div>
     )

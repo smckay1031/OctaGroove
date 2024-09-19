@@ -68,6 +68,18 @@ z-index: 10;
 line-height: 0.5rem;
 }
 
+#trends {
+  width: 376px;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+}
+
+@media  screen and (max-width: 500px ) {
+  #trends {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   #currentlyPlaying {
     display: none;
