@@ -95,11 +95,11 @@ const renderActiveShape = (props) => {
     }
       if(data){
           return (
-            <div className='md:h-80 w-full h-full lg:w-2/3 flex flex-col justify-center items-center relative md:bg-[#ffffff0f] pt-3 md:rounded-xl md:border  md:border-[#ffffff22]'id='trends'>
+            <div className='md:h-80 w-full h-full flex flex-col justify-center items-center relative md:bg-[#ffffff0f] md:rounded-xl md:border  md:border-[#ffffff22]'id='trends'>
                 <h2 className='font-Inter text-xl font-bold text-[#ffffffcf] bg-[#00000000] pt-2'> Trending Genres </h2>
                 <div className='flex items-center justify-centers flex-col h-full'id='trends'>
                     <ResponsiveContainer height={'100%'} width={'100%'} >
-                        <PieChart width={50} height={50} className='capitalize font-Inter font-bold text-sm'>
+                        <PieChart width={300} height={300} className='capitalize font-Inter font-bold text-sm'>
                              <Pie
                                 activeIndex={activeIndex}
                                 activeShape={renderActiveShape}
@@ -107,17 +107,18 @@ const renderActiveShape = (props) => {
                                 cx={'50%'}
                                 cy={'46%'}
                                 innerRadius={65}
-                                outerRadius={90}
+                                outerRadius={80}
                                 fill="#18d862b6"
                                 dataKey="value"
                                 onMouseEnter={onPieEnter}
                                 paddingAngle={2}
                                 stroke='#969696'
-                                />   
+                                />  
+                                 
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <p className='text-xs pl-8 absolute bottom-0 right-5 text-[#ffffff61] '>The makeup of the top eight genres from your recent listening </p>
+                <p className='text-xs pl-8 py-1 absolute bottom-0 right-5 text-[#ffffff61] '>The makeup of the top eight genres from your recent listening </p>
             </div>
         );
     }
