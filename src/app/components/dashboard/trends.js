@@ -96,7 +96,7 @@ const renderActiveShape = (props) => {
       if(data){
           return (
             <div className='md:h-80 w-full h-full lg:w-2/3 flex flex-col justify-center items-center relative md:bg-[#ffffff0f] pt-3 md:rounded-xl md:border  md:border-[#ffffff22]'id='trends'>
-                <h2 className='font-Inter text-xl font-bold text-[#ffffffcf] bg-[#00000000]'> Top Trending Genres </h2>
+                <h2 className='font-Inter text-xl font-bold text-[#ffffffcf] bg-[#00000000] pt-2'> Trending Genres </h2>
                 <div className='flex items-center justify-centers flex-col h-full'id='trends'>
                     <ResponsiveContainer height={'100%'} width={'100%'} >
                         <PieChart width={50} height={50} className='capitalize font-Inter font-bold text-sm'>
