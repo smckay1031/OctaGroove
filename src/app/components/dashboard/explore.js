@@ -104,7 +104,7 @@ export default function ExploreCard() {
                     <button onClick={()=> setToggle('trends')} id="recents" className={trendsActive? 'font-bold underline' : 'hover:font-extralight duration-200'}>Trends</button>
 
             </div >
-                <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-6 flex items-center justify-center">
+                <div className="rounded-2xl border border-[#ffffff25] bg-[#00000080] py-2 flex items-center justify-center">
                         { toggle === "recents" && <Recents />}
                         { toggle ==="reccomend" && <Reccomend />}
                         { toggle === "trends" && <Trends />}

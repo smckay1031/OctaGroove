@@ -95,19 +95,19 @@ const renderActiveShape = (props) => {
     }
       if(data){
           return (
-            <div className='md:h-80 h-96 w-full lg:w-2/3 flex flex-col justify-center items-center relative'>
-                <h2 className='font-Inter text-2xl font-bold text-[#ffffffdb]'> Top Trending Genres </h2>
+            <div className='md:h-80 w-full h-full lg:w-2/3 flex flex-col justify-center items-center relative md:bg-[#ffffff0f] pt-3 md:rounded-xl md:border  md:border-[#ffffff22]'id='trends'>
+                <h2 className='font-Inter text-xl font-bold text-[#ffffffcf] bg-[#00000000]'> Top Trending Genres </h2>
                 <div className='flex items-center justify-centers flex-col h-full'id='trends'>
                     <ResponsiveContainer height={'100%'} width={'100%'} >
-                        <PieChart width={50} height={50}>
+                        <PieChart width={50} height={50} className='capitalize font-Inter font-bold text-sm'>
                              <Pie
                                 activeIndex={activeIndex}
                                 activeShape={renderActiveShape}
                                 data={data}
                                 cx={'50%'}
-                                cy={'40%'}
-                                innerRadius={70}
-                                outerRadius={80}
+                                cy={'46%'}
+                                innerRadius={65}
+                                outerRadius={90}
                                 fill="#18d862b6"
                                 dataKey="value"
                                 onMouseEnter={onPieEnter}
@@ -117,7 +117,7 @@ const renderActiveShape = (props) => {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <p className='text-xs pl-8 absolute bottom-0 right-5 text-[#ffffffbe] '>The makeup of the top eight genres you've recently been listening too.</p>
+                <p className='text-xs pl-8 absolute bottom-0 right-5 text-[#ffffff61] '>The makeup of the top eight genres from your recetn listening </p>
             </div>
         );
     }

@@ -69,7 +69,13 @@ line-height: 0.5rem;
 }
 
 #trends {
-  width: 376px;
+  width: 500px;
+  height: 350px;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+}
+
+#recents {
   animation-name: fadeIn;
   animation-duration: 0.3s;
 }
@@ -77,6 +83,7 @@ line-height: 0.5rem;
 @media  screen and (max-width: 500px ) {
   #trends {
     width: 100%;
+    height:400px;
   }
 }
 
