@@ -50,7 +50,7 @@ async function TopTracks(range) {
                 <ol className="p-1">
                     {tracks.items.map((item, index) =>(
                         <div className="" key={item.id}>
-                            <li className=" my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black border-[#ffffff27] border-0.5 py-1 min-h-10">
+                            <li className=" my-1 text-xs leading-none font-light  bg-[#ffffff15] rounded-md shadow-sm shadow-black border-[#ffffff27] border-0.5 py-1 min-h-10 overflow-hidden">
                                 <div className="flex justify-between items-center">
                                     <div className="flex md:w-2/5 w-3/5 items-center">
                                         <p className="p-1 font-semibold md:text-base text-sm">{`${index + 1}.`}</p>
