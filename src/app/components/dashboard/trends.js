@@ -117,7 +117,7 @@ const renderActiveShape = (props) => {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <p className='text-xs pl-8 absolute bottom-0 right-5 text-[#ffffff61] '>The makeup of the top eight genres from your recetn listening </p>
+                <p className='text-xs pl-8 absolute bottom-0 right-5 text-[#ffffff61] '>The makeup of the top eight genres from your recent listening </p>
             </div>
         );
     }
