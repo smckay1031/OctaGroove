@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="flex flex-col items-center justify-center pb-4">
                     <p className="text-lg font-semibold py-4">Legal</p>
                         <Link href={'/terms'} className="text-sm hover:font-bold"> Terms and Conditions</Link>
-                        <Link href={'/terms'} className="text-sm hover:font-bold"> Terms of Service</Link>
+                        <Link href={'/privacy'} className="text-sm hover:font-bold"> Privacy Policy</Link>
                 </div>
                 <div className="flex flex-col items-center justify-center pb-2">
                     <a href="https://github.com/smckay1031/OctaGroove" target="_blank">

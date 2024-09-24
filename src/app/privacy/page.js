@@ -11,8 +11,7 @@ export default function Privacy(){
             <h3 className="py-4 font-semibold text-xl">2.1 Data Collection</h3>
             <p>Our App does not collect, store, or share any personal data on external databases. All data retrieved by the App from your Spotify account is used solely for display purposes on your dashboard.</p>
             <h3 className="py-4 font-semibold text-xl">2.2 Data Display</h3>
-            <p> The App fetches data such as your top items, recently played songs, playlists, and recommended tracks directly from Spotify’s API. This data is displayed on your dashboard during your session and is not stored or recorded by our servers.
-            </p>
+            <p> The App fetches data such as your top items, recently played songs, playlists, and recommended tracks directly from Spotify’s API. This data is displayed on your dashboard during your session and is not stored or recorded by our servers.</p>
             <h3 className="py-4 font-semibold text-xl">2.3 Authentication</h3>
             <p>We use auth.js for authentication with Spotify to securely connect your Spotify account to the App. The App receives an encrypted token from auth.js, which is stored as a cookie on your device for the duration of your session to use for authentication purposes with auth.js and Spotify servers. This token allows the App to fetch the necessary data from your Spotify account. We do not store or access your authentication token beyond its use in your current session.</p>
             <h2 className="py-8 font-bold text-2xl">3. Data Security</h2>
@@ -23,7 +22,6 @@ export default function Privacy(){
             <p>We may update this user agreement from time to time. Any changes will be posted within the App, and your continued use of the App after changes are made constitutes your acceptance of the new terms.</p>
             <h2 className="py-8 font-bold text-2xl">6. Contact Us</h2>
             <p>If you have any questions or concerns about this agreement, please contact us at <a>octagroove.contact.gmail.com</a> or throught the <a>Contact</a> page on this site.</p>
-        
         </div>
     )
 }
