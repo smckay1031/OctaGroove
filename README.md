@@ -1,3 +1,3 @@
-## Welcom to the OctaGroove Github Reposistory
+## Welcome to the OctaGroove Github Reposistory
 
 
