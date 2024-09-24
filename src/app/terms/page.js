@@ -29,7 +29,7 @@ export default function Terms() {
           <p>
             <strong>Affiliate</strong> means an entity that controls, is
             controlled by or is under common control with a party, where
-            &quot;control&quot; means ownership of 50% or more of the shares,
+            "control" means ownership of 50% or more of the shares,
             equity interest or other securities entitled to vote for election of
             directors or other managing authority.
           </p>
@@ -41,8 +41,8 @@ export default function Terms() {
         </li>
         <li>
           <p>
-            <strong>Company</strong> (referred to as either &quot;the
-            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
+            <strong>Company</strong> (referred to as either "the
+            Company", "We", "Us" or "Our" in
             this Agreement) refers to OctaGroove.
           </p>
         </li>
@@ -60,7 +60,7 @@ export default function Terms() {
         <li>
           <p>
             <strong>Terms and Conditions</strong> (also referred as
-            &quot;Terms&quot;) mean these Terms and Conditions that form the
+            "Terms") mean these Terms and Conditions that form the
             entire agreement between You and the Company regarding the use of
             the Service. This Terms and Conditions agreement has been created
             with the help of the{" "}
@@ -175,10 +175,10 @@ export default function Terms() {
         each party's liability will be limited to the greatest extent permitted
         by law.
       </p>
-      <h2 className="text-2xl py-8 font-bold">&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
+      <h2 className="text-2xl py-8 font-bold">"AS IS" and "AS AVAILABLE" Disclaimer</h2>
       <p>
-        The Service is provided to You &quot;AS IS&quot; and &quot;AS
-        AVAILABLE&quot; and with all faults and defects without warranty of any
+        The Service is provided to You "AS IS" and "AS
+        AVAILABLE" and with all faults and defects without warranty of any
         kind. To the maximum extent permitted under applicable law, the Company,
         on its own behalf and on behalf of its Affiliates and its and their
         respective licensors and service providers, expressly disclaims all
@@ -237,8 +237,8 @@ export default function Terms() {
       <p>
         You represent and warrant that (i) You are not located in a country that
         is subject to the United States government embargo, or that has been
-        designated by the United States government as a &quot;terrorist
-        supporting&quot; country, and (ii) You are not listed on any United
+        designated by the United States government as a "terrorist
+        supporting" country, and (ii) You are not listed on any United
         States government list of prohibited or restricted parties.
       </p>
       <h2 className="text-3xl py-8 font-bold">Severability and Waiver</h2>
