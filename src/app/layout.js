@@ -24,7 +24,9 @@ export const metadata = {
   description: "The Improved Spotify Dashboard",
   keywords: "Top Tracks, Top Artists, Top Eight, Top 8, Spotify Application, Spotify App, Spotify Dashboard, see your top artists, see your top tracks, see recent tracks, get reccomendations, Spotify, view streaming tracks, view playing track",
   author: 'Sean McKay',
-  'google-site-verification':"39WZfLvIjkr_Vt4QM8jMtJGrv2ijzSNFMdOTC2iQUkI",
+  verification: {
+    google:'39WZfLvIjkr_Vt4QM8jMtJ',
+  }
 };
 
 export default async function RootLayout({ children }) {
