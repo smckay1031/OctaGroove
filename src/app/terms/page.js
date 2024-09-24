@@ -27,14 +27,6 @@ export default function Terms() {
         </li>
         <li>
           <p>
-            <strong>Application Store</strong> means the digital distribution
-            service operated and developed by Apple Inc. (Apple App Store) or
-            Google Inc. (Google Play Store) in which the Application has been
-            downloaded.
-          </p>
-        </li>
-        <li>
-          <p>
             <strong>Affiliate</strong> means an entity that controls, is
             controlled by or is under common control with a party, where
             &quot;control&quot; means ownership of 50% or more of the shares,
@@ -249,7 +241,7 @@ export default function Terms() {
         supporting&quot; country, and (ii) You are not listed on any United
         States government list of prohibited or restricted parties.
       </p>
-      <h2 className="text-2xl py-8 font-bold">Severability and Waiver</h2>
+      <h2 className="text-3xl py-8 font-bold">Severability and Waiver</h2>
       <h3 className="text-2xl py-8 font-bold">Severability</h3>
       <p>
         If any provision of these Terms is held to be unenforceable or invalid,
