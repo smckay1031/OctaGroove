@@ -24,7 +24,7 @@ export default function Home() {
      {
       id:"3",
       header: 'More',
-      body: "View your most recent tracks, get reccomendations based on your current listening, and see your current playlists."
+      body: "View your most recent tracks, get reccomendations based on your current listening, and trending top genres."
      }
 
   ]
