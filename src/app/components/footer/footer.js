@@ -36,7 +36,7 @@ export default async function Footer() {
             Contact Us
           </h4>
           <form
-            action={"https://formsubmit.co/octagroove.contact@gmail.com"}
+            action={"https://formsubmit.co/d7125645902af09395742b216a1c8ea0 "}
             method="POST"
             className="flex flex-col justify-center items-center gap-2 p-2 w-full"
           >
