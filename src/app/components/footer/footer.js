@@ -9,14 +9,14 @@ export default function Footer() {
             <div className="flex justify-between items-end p-5">
                 <p className="pb-1"> Created By Sean McKay</p>
                 <div className="flex flex-col items-center justify-center pb-4">
-                    <p className="text-lg font-semibold py-4">Navigation</p>
-                        <Link href={'/'} className="text-sm hover:font-bold">Home</Link>
-                        <Link href={'/dashboard/range_short'} className="text-sm hover:font-bold">Dashboard</Link>
+                    <p className="lg:text-lg text-sm font-semibold py-4">Navigation</p>
+                        <Link href={'/'} className="lg:text-sm text-xs hover:font-bold">Home</Link>
+                        <Link href={'/dashboard/range_short'} className="lg:text-sm text-xs hover:font-bold">Dashboard</Link>
                 </div>
                 <div className="flex flex-col items-center justify-center pb-4">
-                    <p className="text-lg font-semibold py-4">Legal</p>
-                        <Link href={'/terms'} className="text-sm hover:font-bold"> Terms and Conditions</Link>
-                        <Link href={'/privacy'} className="text-sm hover:font-bold"> Privacy Policy</Link>
+                    <p className="md:text-lg text-sm font-semibold py-4">Legal</p>
+                        <Link href={'/terms'} className="lg:text-sm text-xs hover:font-bold"> Terms and Conditions</Link>
+                        <Link href={'/privacy'} className="lg:text-sm text-xs hover:font-bold"> Privacy Policy</Link>
                 </div>
                 <div className="flex flex-col items-center justify-center pb-2">
                     <a href="https://github.com/smckay1031/OctaGroove" target="_blank">
