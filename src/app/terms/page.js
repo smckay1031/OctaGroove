@@ -177,7 +177,7 @@ export default function Terms() {
       </p>
       <h2 className="text-2xl py-8 font-bold">&quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer</h2>
       <p>
-        The Service is provided to You &quote;AS IS&quot; and &quot;AS
+        The Service is provided to You &quot;AS IS&quot; and &quot;AS
         AVAILABLE&quot; and with all faults and defects without warranty of any
         kind. To the maximum extent permitted under applicable law, the Company,
         on its own behalf and on behalf of its Affiliates and its and their
