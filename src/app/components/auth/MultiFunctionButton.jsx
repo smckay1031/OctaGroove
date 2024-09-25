@@ -2,7 +2,6 @@
 import {auth, signIn, signOut} from "../../../auth";
 import AccountIcon from "../../../../public/images/account_circle.svg";
 import Image from "next/image";
-import { redirect } from "next/dist/server/api-utils";
 
 export async function NavButton() {
     const session = await auth();
