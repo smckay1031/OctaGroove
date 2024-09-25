@@ -7,7 +7,7 @@ export default function Footer() {
     return(
         <footer className="max-w-full font-Inter mt-10 bg-black rounded-lg">
             <div className="flex justify-between items-end p-5">
-                <p className="pb-1"> Created By Sean McKay</p>
+                <p className="pb-1 lg:text-base text-sm"> Created By Sean McKay</p>
                 <div className="flex flex-col items-center justify-center pb-4">
                     <p className="lg:text-lg text-sm font-semibold py-4">Navigation</p>
                         <Link href={'/'} className="lg:text-sm text-xs hover:font-bold">Home</Link>
