@@ -19,7 +19,7 @@ OctaGroove is a front-end web app currently using:
 ## Contribution 
 OctaGroove is has been a personal project but open source contribution is welcome.
 
-If you would like to contribute to OctaGoove email [octagroove.contact@gmail.com](octagroove.contact@gmail.com)
+If you would like to contribute to OctaGoove email: octagroove.contact@gmail.com
 
 
 
