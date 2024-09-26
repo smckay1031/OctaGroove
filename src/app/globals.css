@@ -42,9 +42,11 @@ body {
   width: 200px;
 }
 
-
+#explore {
+  max-width: 1208px;
+}
 #exploreCard {
-  width: 72%;
+  width: 100%;
   margin-left: 1rem;
   margin-top: 1rem;
   z-index: 3;

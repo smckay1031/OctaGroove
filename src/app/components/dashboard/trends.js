@@ -99,7 +99,7 @@ const renderActiveShape = (props) => {
                 <h2 className='font-Inter text-xl font-bold text-[#ffffffcf] bg-[#00000000] pt-2'> Trending Genres </h2>
                 <div className='flex items-center justify-centers flex-col h-full'id='trends'>
                     <ResponsiveContainer height={'100%'} width={'100%'} >
-                        <PieChart width={300} height={300} className='capitalize font-Inter font-bold text-sm'>
+                        <PieChart width={350} height={300} className='capitalize font-Inter font-bold text-sm'>
                              <Pie
                                 activeIndex={activeIndex}
                                 activeShape={renderActiveShape}
