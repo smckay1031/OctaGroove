@@ -20,7 +20,7 @@ const inter = Inter({
 
 
 export const metadata = {
-  title: "OctaGroove Spotify",
+  title: "OctaGroove Music App",
   description: "The Improved Spotify Dashboard",
   keywords: "Top Tracks, Top Artists, Top Eight, Top 8, Spotify Application, Spotify App, Spotify Dashboard, see your top artists, see your top tracks, see recent tracks, get reccomendations, Spotify, view streaming tracks, view playing track",
   verification: {
