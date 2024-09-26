@@ -39,7 +39,7 @@ async function TopTracks(range) {
     
     if(response.ok) {
         return(
-            <div className=" flex flex-col font-Inter h-full max-w-full" id="topTracks">
+            <div className=" flex flex-col font-Inter h-full flex-grow max-w-full" id="topTracks">
             <h2 className="text-3xl font-bold text-center pb-4"> Top Tracks</h2>
             <div className="bg-[#00000040] rounded-2xl backdrop-blur border-[#ffffff27] border py-4 px-1">
                 <div className="flex justify-between text-xs text-center font-semibold">
