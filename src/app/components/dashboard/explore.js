@@ -19,6 +19,7 @@ function Recents(){
         )
     }
     if(data) {
+        //joins list all of all contributing artists of track otherwise only one artists would be listed per track 
         function Artists(item) {
             const artistsNames = item.track.artists.map((artist)=>(artist.name))
             const artistList = artistsNames.join(', ')
