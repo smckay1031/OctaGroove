@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function Privacy(){
@@ -21,7 +22,7 @@ export default function Privacy(){
             <h2 className="py-8 font-bold text-2xl">5. Changes to This Agreement</h2>
             <p>We may update this user agreement from time to time. Any changes will be posted within the App, and your continued use of the App after changes are made constitutes your acceptance of the new terms.</p>
             <h2 className="py-8 font-bold text-2xl">6. Contact Us</h2>
-            <p>If you have any questions or concerns about this agreement, please contact us at <a>octagroove.contact.gmail.com</a> or throught the <a>Contact</a> page on this site.</p>
+            <p>If you have any questions or concerns about this agreement, please contact us at <Link href="mailto:octagroove.contact@gmail.com" className="underline">octagroove.contact.gmail.com</Link> or throught the <a>Contact</a> page on this site.</p>
         </div>
     )
 }
