@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Terms() {
   return (
     < div className="mt-32 lg:px-56 md:px-32 px-8">
@@ -284,7 +286,7 @@ export default function Terms() {
         contact us:
       </p>
       <ul>
-        <li>By email: octagroove.contact@gmail.com</li>
+        <li>By email: <Link href="mailto:octagroove.contact@gmail.com" target="blank"  className="hover:underline">octagroove.contact@gmail.com</Link></li>
       </ul>
     </div>
   );
