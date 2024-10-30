@@ -11,9 +11,7 @@ export async function GET() {
         headers: {
             'Authorization': 'Bearer ' + token
         }
-    }, 
-    {next: {revalidate: 1800} }
-    )   
+    })   
     const seed = await seedResponse.json()
 
     function getIDs(obj) {
